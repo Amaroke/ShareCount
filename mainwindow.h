@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+//AREUH
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
