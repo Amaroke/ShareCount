@@ -15,7 +15,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_creer_compte_clicked();
+
 private:
     Ui::MainWindow *ui;
+    void afficher_dialog_inscription();
 };
+
 #endif // MAINWINDOW_H
