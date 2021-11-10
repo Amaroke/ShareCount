@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "inscription.h"
+#include "inscription.hpp"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)

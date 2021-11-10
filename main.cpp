@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "inscription.h"
+#include "inscription.hpp"
 
 #include <QApplication>
 

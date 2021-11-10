@@ -14,7 +14,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
-    inscription.h \
+    inscription.hpp \
     mainwindow.h
 
 FORMS += \
