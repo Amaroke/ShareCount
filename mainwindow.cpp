@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "inscription.hpp"
+#include "connexion.hpp"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_creer_compte_clicked()
 {
-    Inscription *inscription = new Inscription(this);
+    Connexion *inscription = new Connexion(this);
     inscription->setWindowTitle("Créer un compte");
     inscription->show();
 }

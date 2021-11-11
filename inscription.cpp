@@ -66,6 +66,6 @@ void Inscription::on_validation_accepted()
 //En cas d'appui sur annuler.
 void Inscription::on_validation_rejected()
 {
-    this->reject(); //On ferme la fenêtre de dialog.
+    this->reject(); //On ferme la fenêtre de dialogue.
 }
 
