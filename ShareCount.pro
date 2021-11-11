@@ -11,11 +11,13 @@ CONFIG += c++11
 SOURCES += \
     inscription.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    utilisateur.cpp
 
 HEADERS += \
     inscription.hpp \
-    mainwindow.h
+    mainwindow.h \
+    utilisateur.hpp
 
 FORMS += \
     inscription.ui \
