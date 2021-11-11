@@ -2,8 +2,7 @@
 #define GESTIONNAIREDIALOGUE_HPP
 #include "utilisateur.hpp"
 
-class GestionnaireDialogue
-{
+class GestionnaireDialogue {
 private:
     Utilisateur utilisateur_connecte;
 
@@ -12,7 +11,8 @@ public:
     ~GestionnaireDialogue();
     Utilisateur get_utilisateur_connecte();
     void set_utilisateur_connecte(Utilisateur utilisateur);
-    Utilisateur existence_utilisateur(std::string adresse_mail, std::string mot_de_passe);
+    Utilisateur recherche_utilisateur(std::string adresse_mail,
+                                      std::string mot_de_passe);
 };
 
 #endif // GESTIONNAIREDIALOGUE_HPP

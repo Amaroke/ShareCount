@@ -11,22 +11,24 @@
 
 #include <string>
 
-/** @brief La classe Utilisateur est la classe représentant les données d'un utilisateur.
+/** @brief La classe Utilisateur est la classe représentant les données d'un
+ *utilisateur.
  **
- ** Elle contient 4 attributs, 1 méthode de construction, 1 méthode de destruction
- ** et 8 méthodes d'obtention et de modification des attributs cités précédemment.
+ ** Elle contient 4 attributs, 1 méthode de construction, 1 méthode de
+ *destruction
+ ** et 8 méthodes d'obtention et de modification des attributs cités
+ *précédemment.
  **
  ** @version 3
  **
  ** @author L. Yvoz, univ. de Lorraine
  **/
-class Utilisateur
-{
+class Utilisateur {
 private:
-
     /// @brief Le nom d'utilisateur.
     std::string nom_utilisateur;
-    /// @brief L'id permettant d'identifier un utilisateur, unique pour chaque utilisateur.
+    /// @brief L'id permettant d'identifier un utilisateur, unique pour chaque
+    /// utilisateur.
     int id;
     /// @brief L'adresse mail de l'utilisateur.
     std::string adresse_mail;
@@ -34,14 +36,15 @@ private:
     std::string mot_de_passe;
 
 public:
-
-    /// @brief Le constructeur, assigne les valeurs entrées en paramètre aux attributs de la classe.
+    /// @brief Le constructeur, assigne les valeurs entrées en paramètre aux
+    /// attributs de la classe.
     ///
     /// @param nom_utilisateur le nom d'utilisateur
     /// @param id l'identifiant de l'utilisateur
     /// @param adresse_mail l'adresse mail
     /// @param mot_de_passe le mot de passe
-    Utilisateur(std::string nom_utilisateur, int id, std::string adresse_mail, std::string mot_de_passe);
+    Utilisateur(std::string nom_utilisateur, int id, std::string adresse_mail,
+                std::string mot_de_passe);
     /// @brief Le destructeur, ne fait rien.
     ~Utilisateur();
     /// @brief Méthode d'obtention de l'attribut nom_utilisateur.

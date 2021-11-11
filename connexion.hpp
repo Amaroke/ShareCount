@@ -10,9 +10,9 @@
 #ifndef CONNEXION_H
 #define CONNEXION_H
 
-#include <QDialog>
 #include "mainwindow.hpp"
 #include "ui_connexion.h"
+#include <QDialog>
 #include <iostream>
 #include <regex>
 
@@ -30,12 +30,11 @@ class Connexion;
  ** @author H. Iopeti, univ. Lorraine
  **/
 
-class Connexion : public QDialog
-{
+class Connexion : public QDialog {
     Q_OBJECT
 
 public:
-    explicit Connexion(QWidget *parent = nullptr);
+    explicit Connexion(QWidget* parent = nullptr);
     /// @brief Destructeur de la classe, ne fait rien.
     ~Connexion();
 
@@ -50,7 +49,7 @@ private slots:
     void on_valider_clicked();
 
 private:
-    Ui::Connexion *ui;
+    Ui::Connexion* ui;
 };
 
 #endif // CONNEXION_H
