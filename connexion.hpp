@@ -11,6 +11,10 @@
 #define CONNEXION_H
 
 #include <QDialog>
+#include "mainwindow.hpp"
+#include "ui_connexion.h"
+#include <iostream>
+#include <regex>
 
 namespace Ui {
 class Connexion;

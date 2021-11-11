@@ -1,6 +1,5 @@
-#include "mainwindow.h"
+#include "mainwindow.hpp"
 #include "inscription.hpp"
-
 #include <QApplication>
 
 int main(int argc, char *argv[])

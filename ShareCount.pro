@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     connexion.cpp \
+    gestionnairedialogue.cpp \
     inscription.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -17,8 +18,9 @@ SOURCES += \
 
 HEADERS += \
     connexion.hpp \
+    gestionnairedialogue.hpp \
     inscription.hpp \
-    mainwindow.h \
+    mainwindow.hpp \
     utilisateur.hpp
 
 FORMS += \

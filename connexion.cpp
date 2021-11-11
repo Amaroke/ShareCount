@@ -4,10 +4,6 @@
  */
 
 #include "connexion.hpp"
-#include "ui_connexion.h"
-#include <iostream>
-#include <regex>
-#include <inscription.hpp>
 
 //Constructeur de la classe Connexion.
 Connexion::Connexion(QWidget *parent) :
@@ -33,9 +29,6 @@ void Connexion::on_annuler_clicked()
 void Connexion::on_creer_un_compte_clicked()
 {
     this->reject(); //On ferme la fenêtre de dialogue.
-    Inscription *inscription = new Inscription(this); //On instancie la classe Inscription.
-    inscription->setWindowTitle("Créer un compte"); //On nomme la fenêtre.
-    inscription->show(); //On affiche la fenêtre de dialogue.
 }
 
 
@@ -61,8 +54,13 @@ void Connexion::on_valider_clicked()
         //Si le test est valide, on affiche sur la sortie standard le mail et le mot de passe saisi.
         std::cout << mail;
         std::cout << mdp;
-        //On ferme le dialogue.
-        this->accept();
+
+
+            this->accept();//On ferme le dialogue.
+
+
+            std::cout << "Impossible de se connecter au compte\n";
+
     } else {
         //Si le test est invalide, on affiche un message d'erreur sur la sortie standard.
         std::cout << "Veuillez recommencer !\n";

@@ -4,6 +4,7 @@
  *
  * L. Yvoz, univ. de Lorraine
  */
+
 #include "utilisateur.hpp"
 // Le constructeur, assigne les valeurs entrées en paramètre aux attributs de la classe.
 //
@@ -11,12 +12,13 @@
 // id l'identifiant de l'utilisateur
 // adresse_mail l'adresse mail
 // mot_de_passe le mot de passe
-Utilisateur::Utilisateur(std::string nom_utilisateur, int id, std::string adresse_mail, std::string mot_de_passe)
+Utilisateur::Utilisateur(std::string nom_utilisateur, int id, std::string adresse_mail, std::string mot_de_passe) :
+    nom_utilisateur(nom_utilisateur),
+    id(id),
+    adresse_mail(adresse_mail),
+    mot_de_passe(mot_de_passe)
 {
-   set_nom_utilisateur(nom_utilisateur);
-   set_id(id);
-   set_adresse_mail(adresse_mail);
-   set_mot_de_passe(mot_de_passe);
+
 }
 // Le destructeur, ne fait rien.
 Utilisateur::~Utilisateur()

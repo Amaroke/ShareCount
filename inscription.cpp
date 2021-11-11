@@ -4,10 +4,6 @@
  */
 
 #include "inscription.hpp"
-#include "ui_inscription.h"
-#include <iostream>
-#include <string>
-#include <regex>
 
 //Constructeur de la classe Inscription.
 Inscription::Inscription(QWidget *parent) :

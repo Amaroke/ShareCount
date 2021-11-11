@@ -11,6 +11,10 @@
 #define INSCRIPTION_H
 
 #include <QDialog>
+#include "ui_inscription.h"
+#include <iostream>
+#include <string>
+#include <regex>
 
 namespace Ui {
 class Inscription;
