@@ -1,0 +1,9 @@
+Version 1 : Mise en place de QT et d'une première fenêtre graphique.
+
+Version 2 : Création de la classe graphique Inscription (.ui, .hpp, .cpp).
+
+Version 3 : Création de la classe Utilisateur (.hpp, .cpp).
+
+Version 4 : Création de la classe graphique Connexion (.ui, .hpp, .cpp).
+
+Version 5 : Création de la classe graphique Accueil (.ui, .hpp, .cpp) qui lie le fonctionnement des classes Utilisateur, Inscription et Connexion.
