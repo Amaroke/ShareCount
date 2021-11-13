@@ -34,24 +34,31 @@ class Connexion : public QDialog {
     Q_OBJECT
 
 public:
+    /// @brief Constructeur de la classe Connexion.
     explicit Connexion(QWidget* parent = nullptr);
+    /// @brief Constructeur de la classe Connexion.
+    ///
+    /// @param QWidget parent
+    /// @param String l'adresse mail
+    /// @param String le mot de passe
+    /// @param bool Existence de l'utilisateur
     Connexion(QWidget* parent, std::string adresse_mail, std::string mot_de_passe, bool utilisateur_existe);
     /// @brief Destructeur de la classe, ne fait rien.
     ~Connexion();
-    /// @brief Fonction permettant de récupérer les informations rentrée par l'utilisateur
+    /// @brief Fonction permettant de récupérer les informations rentrée par l'utilisateur.
     ///
     /// @param adresse_mail un pointeur contenant l'adresse vers le string de l'adresse mail donnée
     /// @param mot_de_passe un pointeur contenant l'adresse vers le string du mot de passe donné
     void getDonnees(std::string& adresse_mail, std::string& mot_de_passe);
 
 private slots:
-    /// @brief La fonction associée à un clique de bouton annuler.
+    /// @brief La fonction associée à un clic de bouton annuler.
     void on_annuler_clicked();
-    /// @brief La fonction associée à un clique de bouton creer un compte.
+    /// @brief La fonction associée à un clic de bouton creer un compte.
     void on_creer_un_compte_clicked();
-    /// @brief La fonction associée à un clique de bouton mot de passe oublié.
+    /// @brief La fonction associée à un clic de bouton mot de passe oublié.
     void on_mdp_oublie_clicked();
-    /// @brief La fonction associée à un clique de bouton valider.
+    /// @brief La fonction associée à un clic de bouton valider.
     void on_valider_clicked();
 
 private:

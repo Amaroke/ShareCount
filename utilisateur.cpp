@@ -14,8 +14,8 @@
 // adresse_mail l'adresse mail
 // mot_de_passe le mot de passe
 Utilisateur::Utilisateur(std::string nom_utilisateur,
-                         std::string adresse_mail,
-                         std::string mot_de_passe)
+    std::string adresse_mail,
+    std::string mot_de_passe)
     : nom_utilisateur(nom_utilisateur)
     , adresse_mail(adresse_mail)
     , mot_de_passe(mot_de_passe)

@@ -1,5 +1,6 @@
 #include "mainwindow.hpp"
 
+// Le constructeur de la classe.
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -8,11 +9,19 @@ MainWindow::MainWindow(QWidget* parent)
     ui->setupUi(this);
 }
 
+// Le destructeur de la classe.
 MainWindow::~MainWindow() { delete ui; }
 
+// Fonction qui connecte un utilisateur à l'application en fonction de l'adresse mail et du mot de passe donné en paramètre.
+//
+// adresse_mail l'adresse mail donnée
+// mot_de_passe un pointeur contenant le mot de passe donné
+// mdp_correct un pointeur vers un booléen qui indique si le mot de passe est correct
+//
+// Retourne un booléen qui indique su l'utilisateur c'est connecté.
 bool MainWindow::connexion_utilisateur(std::string adresse_mail,
-                                       std::string mot_de_passe,
-                                       bool& mdp_correct)
+    std::string mot_de_passe,
+    bool& mdp_correct)
 {
     Utilisateur utilisateur = gestionnaire_dialogue.recherche_utilisateur(adresse_mail);
     bool utilisateur_existe = true;
@@ -28,6 +37,7 @@ bool MainWindow::connexion_utilisateur(std::string adresse_mail,
     return utilisateur_existe;
 }
 
+// Création d'une fenêtre de d'inscription depuis la mainwindows.
 void MainWindow::fenetre_creer_un_compte()
 {
     Inscription* inscription = new Inscription(this); // On instancie la classe Inscription.
@@ -51,11 +61,16 @@ void MainWindow::fenetre_creer_un_compte()
     }
 }
 
+// Création d'une fenêtre de connexion depuis la mainwindows.
+//
+// adresse_mail l'adresse mail donnée
+// mot_de_passe un pointeur contenant le mot de passe donné
+// utilisateur_existe un booléen qui contient l'information de l'existence du compte
 void MainWindow::fenetre_se_connecter(std::string adresse_mail, std::string mot_de_passe, bool utilisateur_existe)
 {
     Connexion* connexion;
     if (adresse_mail == "" && mot_de_passe == "" && utilisateur_existe == false) {
-       connexion = new Connexion(this); // On instancie la classe Connexion.
+        connexion = new Connexion(this); // On instancie la classe Connexion.
     } else {
         connexion = new Connexion(this, adresse_mail, mot_de_passe, utilisateur_existe); // On instancie la classe Connexion avec les données et le message d'erreur correspondant.
     }
@@ -75,17 +90,20 @@ void MainWindow::fenetre_se_connecter(std::string adresse_mail, std::string mot_
     }
 }
 
+// La fonction associée à un clic de bouton de création de compte.
 void MainWindow::on_creer_compte_clicked() { fenetre_creer_un_compte(); }
 
+// La fonction associée à un clic de bouton sur se connecter.
 void MainWindow::on_se_connecter_clicked() { fenetre_se_connecter(); }
 
+// La fonction associée à un clic de bouton sur afficher l'utilisateur connecté.
 void MainWindow::on_afficher_connecter_clicked()
 {
     std::cout
-            << gestionnaire_dialogue.get_utilisateur_connecte().get_adresse_mail() << "\n";
+        << gestionnaire_dialogue.get_utilisateur_connecte().get_adresse_mail() << "\n";
     std::cout
-            << gestionnaire_dialogue.get_utilisateur_connecte().get_mot_de_passe() << "\n";
+        << gestionnaire_dialogue.get_utilisateur_connecte().get_mot_de_passe() << "\n";
     std::cout
-            << gestionnaire_dialogue.get_utilisateur_connecte().get_nom_utilisateur() << "\n";
+        << gestionnaire_dialogue.get_utilisateur_connecte().get_nom_utilisateur() << "\n";
     fflush(stdout);
 }

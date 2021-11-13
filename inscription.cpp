@@ -23,7 +23,7 @@ void Inscription::on_validation_accepted()
     std::string mail = ui->saisie_mail->toPlainText().toStdString();
     // On fait les vérifications sur l'email (syntaxe correcte).
     const std::regex pattern(
-                "(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+"); // Regex pour la validité d'un
+        "(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+"); // Regex pour la validité d'un
     // mail.
     bool mail_valide = std::regex_match(mail, pattern);
 
@@ -61,7 +61,13 @@ void Inscription::on_validation_rejected()
     this->reject(); // On ferme la fenêtre de dialogue.
 }
 
-void Inscription::getDonnees(std::string& adresse_mail, std::string& nom_utilisateur, std::string& mot_de_passe) {
+// Fonction permettant de récupérer les informations rentrée par l'utilisateur.
+//
+// adresse_mail un pointeur contenant l'adresse vers le string de l'adresse mail donnée
+// nom_utilisateur un pointeur contenant l'adresse vers le string du nom d'utilisateur donné
+// mot_de_passe un pointeur contenant l'adresse vers le string du mot de passe donné
+void Inscription::getDonnees(std::string& adresse_mail, std::string& nom_utilisateur, std::string& mot_de_passe)
+{
     adresse_mail = ui->saisie_mail->toPlainText().toStdString();
     nom_utilisateur = ui->saisie_user->toPlainText().toStdString();
     mot_de_passe = ui->saisie_mdp->toPlainText().toStdString();
