@@ -7,11 +7,9 @@
 
 // Constructeur de la classe GestionnaireDialogue.
 GestionnaireDialogue::GestionnaireDialogue()
-    : utilisateur_connecte("", 0, "", "")
+    : utilisateur_connecte("", "", ""),
+      utilisateurs_enregistres()
 {
-
-    // POUR TEST
-    set_utilisateur_connecte(Utilisateur("a", 1, "aa", "aaa"));
 }
 
 //Destructeur de la classe GestionnaireDialogue.
@@ -27,11 +25,28 @@ Utilisateur GestionnaireDialogue::get_utilisateur_connecte()
 void GestionnaireDialogue::set_utilisateur_connecte(Utilisateur utilisateur)
 {
     utilisateur_connecte = utilisateur;
+    std::cout
+            << "Bienvenue "
+            << utilisateur_connecte.get_nom_utilisateur()
+            << " vous êtes connecté à ShareCount !\n";
+   fflush(stdout);
 }
 
-//Fonction qui recherche un utilisateur à l'aide de son mail et de son mot de passe.
-Utilisateur GestionnaireDialogue::recherche_utilisateur(std::string adresse_mail,
-                                                        std::string mot_de_passe)
+//Fonction qui recherche un utilisateur à l'aide de son mail.
+Utilisateur GestionnaireDialogue::recherche_utilisateur(std::string adresse_mail)
 {
-    return Utilisateur("", -1, adresse_mail, mot_de_passe);
+    Utilisateur utilisateur = Utilisateur("","","");
+    int taille = utilisateurs_enregistres.size();
+    for (int i = 0; i < taille; i++) {
+        if (utilisateurs_enregistres[i].get_adresse_mail() == adresse_mail) {
+            utilisateur = utilisateurs_enregistres[i];
+        }
+    }
+    return utilisateur;
 }
+
+void GestionnaireDialogue::ajouter_utilisateur(Utilisateur utilisateur) {
+    utilisateurs_enregistres.push_back(utilisateur);
+}
+
+

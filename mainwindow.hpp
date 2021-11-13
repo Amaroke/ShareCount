@@ -20,9 +20,10 @@ public:
     MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
     bool connexion_utilisateur(std::string adresse_mail,
-                               std::string mot_de_passe);
+                               std::string mot_de_passe,
+                               bool& mdp_correct);
     void fenetre_creer_un_compte();
-    void fenetre_se_connecter();
+    void fenetre_se_connecter(std::string adresse_mail = "", std::string mot_de_passe = "", bool utilisateur_existe = false);
 
 private slots:
     void on_creer_compte_clicked();

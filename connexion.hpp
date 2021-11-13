@@ -35,8 +35,14 @@ class Connexion : public QDialog {
 
 public:
     explicit Connexion(QWidget* parent = nullptr);
+    Connexion(QWidget* parent, std::string adresse_mail, std::string mot_de_passe, bool utilisateur_existe);
     /// @brief Destructeur de la classe, ne fait rien.
     ~Connexion();
+    /// @brief Fonction permettant de récupérer les informations rentrée par l'utilisateur
+    ///
+    /// @param adresse_mail un pointeur contenant l'adresse vers le string de l'adresse mail donnée
+    /// @param mot_de_passe un pointeur contenant l'adresse vers le string du mot de passe donné
+    void getDonnees(std::string& adresse_mail, std::string& mot_de_passe);
 
 private slots:
     /// @brief La fonction associée à un clique de bouton annuler.

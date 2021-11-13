@@ -60,3 +60,9 @@ void Inscription::on_validation_rejected()
 {
     this->reject(); // On ferme la fenêtre de dialogue.
 }
+
+void Inscription::getDonnees(std::string& adresse_mail, std::string& nom_utilisateur, std::string& mot_de_passe) {
+    adresse_mail = ui->saisie_mail->toPlainText().toStdString();
+    nom_utilisateur = ui->saisie_user->toPlainText().toStdString();
+    mot_de_passe = ui->saisie_mdp->toPlainText().toStdString();
+}

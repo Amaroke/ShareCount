@@ -27,9 +27,6 @@ class Utilisateur {
 private:
     /// @brief Le nom d'utilisateur.
     std::string nom_utilisateur;
-    /// @brief L'id permettant d'identifier un utilisateur, unique pour chaque
-    /// utilisateur.
-    int id;
     /// @brief L'adresse mail de l'utilisateur.
     std::string adresse_mail;
     /// @brief Le mot de passe de l'utilisateur.
@@ -43,7 +40,8 @@ public:
     /// @param id l'identifiant de l'utilisateur
     /// @param adresse_mail l'adresse mail
     /// @param mot_de_passe le mot de passe
-    Utilisateur(std::string nom_utilisateur, int id, std::string adresse_mail,
+    Utilisateur(std::string nom_utilisateur,
+                std::string adresse_mail,
                 std::string mot_de_passe);
     /// @brief Le destructeur, ne fait rien.
     ~Utilisateur();
@@ -55,14 +53,6 @@ public:
     ///
     /// @param La chaine de caractères à utiliser pour la modification.
     void set_nom_utilisateur(std::string nom_utilisateur);
-    /// @brief Méthode d'obtention de l'attribut id.
-    ///
-    /// @return l'entier demandé.
-    int get_id();
-    /// @brief Méthode de modification de l'attribut id.
-    ///
-    /// @param La chaine de caractères l'entier à utiliser pour la modification.
-    void set_id(int id);
     /// @brief Méthode d'obtention de l'attribut adresse_mail.
     ///
     /// @return La chaine de caractères demandée.

@@ -13,6 +13,18 @@ Connexion::Connexion(QWidget* parent)
     ui->setupUi(this);
 }
 
+Connexion::Connexion( QWidget* parent, std::string adresse_mail, std::string mot_de_passe, bool utilisateur_existe) :
+    QDialog(parent),
+    ui(new Ui::Connexion)
+{
+    ui->setupUi(this);
+    ui->adresse_mail->setText(QString::fromStdString(adresse_mail));
+    ui->mot_de_passe->setText(QString::fromStdString(mot_de_passe));
+    if (utilisateur_existe) {
+        //RAJOUTER UN MESSAGE D'ERREUR
+    }
+}
+
 // Destructeur de la classe Connexion.
 Connexion::~Connexion() { delete ui; }
 
@@ -53,4 +65,9 @@ void Connexion::on_valider_clicked()
         std::cout << "Veuillez recommencer !\n";
     }
     fflush(stdout);
+}
+
+void Connexion::getDonnees(std::string& adresse_mail, std::string& mot_de_passe) {
+    adresse_mail = ui->adresse_mail->toPlainText().toStdString();
+    mot_de_passe = ui->mot_de_passe->toPlainText().toStdString();
 }

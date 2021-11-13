@@ -38,6 +38,12 @@ public:
     explicit Inscription(QWidget* parent = nullptr);
     /// @brief Destructeur de la classe, ne fait rien.
     ~Inscription();
+    /// @brief Fonction permettant de récupérer les informations rentrée par l'utilisateur
+    ///
+    /// @param adresse_mail un pointeur contenant l'adresse vers le string de l'adresse mail donnée
+    /// @param nom_utilisateur un pointeur contenant l'adresse vers le string du nom d'utilisateur donné
+    /// @param mot_de_passe un pointeur contenant l'adresse vers le string du mot de passe donné
+    void getDonnees(std::string& adresse_mail, std::string& nom_utilisateur, std::string& mot_de_passe);
 
 private slots:
     /// @brief La fonction associée à un clique de bouton valider.
