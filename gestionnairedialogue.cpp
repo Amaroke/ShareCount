@@ -61,10 +61,14 @@ void GestionnaireDialogue::ajouter_utilisateur(Utilisateur utilisateur)
 void GestionnaireDialogue::ajouter_compte(std::string nom, int type_compte) {
     switch (type_compte)
     {
-        case 1: comptes_enregistres.push_back(CompteDepensesPartagees(utilisateur_connecte, nom));
-
-        case 2: comptes_enregistres.push_back(Cagnotte(utilisateur_connecte, nom));
-
-        case 3: comptes_enregistres.push_back(CompteCommun(utilisateur_connecte, nom));
+        case 1:
+            comptes_enregistres.push_back(CompteDepensesPartagees(utilisateur_connecte, nom));
+            break;
+        case 2:
+            comptes_enregistres.push_back(Cagnotte(utilisateur_connecte, nom));
+            break;
+        case 3:
+            comptes_enregistres.push_back(CompteCommun(utilisateur_connecte, nom));
+            break;
     }
 }

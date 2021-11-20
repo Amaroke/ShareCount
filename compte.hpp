@@ -38,10 +38,9 @@ protected:
     /// @param  nom le nom du compte.
     Compte(Utilisateur createur, std::string nom);
 
+public:
     /// @brief Le destructeur ne fait rien.
     ~Compte();
-
-public:
     /// @brief Procédure permettant d'ajouter un utilisateur à la liste des participants du compte.
     ///
     /// @param utilisateur l'utilisateur à rajouter
