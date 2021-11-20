@@ -51,3 +51,20 @@ void GestionnaireDialogue::ajouter_utilisateur(Utilisateur utilisateur)
 {
     utilisateurs_enregistres.push_back(utilisateur);
 }
+
+// Fonction qui crée le bon compte à partir des paramètes
+// et l'ajoute à la liste des comptes enregistrés. @version 7 @author L. Yvoz, univ. Lorraine
+//
+// nom le nom du compte à créer
+// type_compte un chiffre représentant le type du compte à créer,
+// 1 : dépenses partagées, 2 : cagnotte, 3 : compte commun.
+void GestionnaireDialogue::ajouter_compte(std::string nom, int type_compte) {
+    switch (type_compte)
+    {
+        case 1: comptes_enregistres.push_back(CompteDepensesPartagees(utilisateur_connecte, nom));
+
+        case 2: comptes_enregistres.push_back(Cagnotte(utilisateur_connecte, nom));
+
+        case 3: comptes_enregistres.push_back(CompteCommun(utilisateur_connecte, nom));
+    }
+}

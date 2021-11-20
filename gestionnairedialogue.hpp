@@ -10,6 +10,7 @@
 #ifndef GESTIONNAIREDIALOGUE_HPP
 #define GESTIONNAIREDIALOGUE_HPP
 #include "utilisateur.hpp"
+#include "compte.hpp"
 #include <iostream>
 #include <vector>
 
@@ -27,8 +28,12 @@ private:
     /// @brief L'utilisateur qui est connecté.
     Utilisateur utilisateur_connecte;
     //TEMPORAIRE, REMPLACE LA BDD :
-    /// @brief La liste des utilisateurs enregistrés sur l'application. @version 5 @author L. Yvoz, univ. Lorraine
+    /// @brief La liste des utilisateurs enregistrés sur l'application.
+    /// @version 5 @author L. Yvoz, univ. Lorraine
     std::vector<Utilisateur> utilisateurs_enregistres;
+    /// @brief La liste des comptes enregistrés sur l'application.
+    /// @version 7 @author L. Yvoz, univ. Lorraine
+    std::vector<Compte> comptes_enregistres;
 
 public:
     /// @brief Constructeur de la classe.
@@ -47,10 +52,18 @@ public:
     ///
     /// @return Un utilisteur qui correspond à l'email donné.
     Utilisateur recherche_utilisateur(std::string adresse_mail);
-    /// @brief Fonction qui ajoute un utilisateur à la liste des utilisateurs de l'application. @version 5 @author L. Yvoz, univ. Lorraine
+    /// @brief Fonction qui ajoute un utilisateur à la liste des utilisateurs
+    /// de l'application. @version 5 @author L. Yvoz, univ. Lorraine
     ///
     /// @param utilisateur l'utilisateur à ajouter
     void ajouter_utilisateur(Utilisateur utilisateur);
+    /// @brief Fonction qui crée le bon compte à partir des paramètes
+    /// et l'ajoute à la liste des comptes enregistrés. @version 7 @author L. Yvoz, univ. Lorraine
+    ///
+    /// @param nom le nom du compte à créer
+    /// @param type_compte un chiffre représentant le type du compte à créer,
+    /// 1 : dépenses partagées, 2 : cagnotte, 3 : compte commun.
+    void ajouter_compte(std::string nom, int type_compte);
 };
 
 #endif // GESTIONNAIREDIALOGUE_HPP
