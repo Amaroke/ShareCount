@@ -1,12 +1,3 @@
-/** @file compte.hpp
- **
- ** @brief Le fichier qui contient la classe abstraite Compte et ses classes filles
- ** CompteDepensesPartagees, Cagnotte et CompteCommun.
- **
- ** @version 7
- **
- ** @author L. Yvoz, univ. Lorraine
- **/
 #ifndef COMPTE_HPP
 #define COMPTE_HPP
 

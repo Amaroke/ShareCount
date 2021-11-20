@@ -1,3 +1,7 @@
+/* compte.cpp
+ * version 7
+ * L. Yvoz, univ. Lorraine
+ */
 #include "compte.hpp"
 
 // Le constructeur permet de définir les champs
