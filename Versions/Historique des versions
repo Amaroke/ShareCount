@@ -7,3 +7,5 @@ Version 3 : Création de la classe Utilisateur (.hpp, .cpp).
 Version 4 : Création de la classe graphique Connexion (.ui, .hpp, .cpp).
 
 Version 5 : Création de la classe GestionnaireDialogue (.hpp, .cpp) qui lie le fonctionnement des classes Utilisateur, Inscription et Connexion, de manière à pouvoir créer des comptes, et les stocker temporairement dans l'application, ainsi que de pouvoir s'y connecter et d'afficher les données de l'utilisateur actuellement connecté à l'application.
+
+Version 6 : Ajout de la possibilité de quitter l'application.
