@@ -11,3 +11,7 @@ Version 5 : Création de la classe GestionnaireDialogue (.hpp, .cpp) qui lie le 
 Version 6 : Ajout de la possibilité de quitter l'application.
 
 Version 7 : Ajout de la classe Compte (.hpp, .cpp) et des ses classes filles.
+
+Version 8 : Création de la classe graphique Invitation (.hpp, .cpp, .ui).
+
+Version 9 : Ajout de la gestion de fenêtre, création de la classe accueil (.hpp, .cpp).

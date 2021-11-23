@@ -1,16 +1,16 @@
-#include "mainwindow.hpp"
+#include "accueil.hpp"
 
 // Le constructeur de la classe.
-MainWindow::MainWindow(QWidget* parent)
+Accueil::Accueil(QWidget* parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    , ui(new Ui::Accueil)
     , gestionnaire_dialogue()
 {
     ui->setupUi(this);
 }
 
 // Le destructeur de la classe.
-MainWindow::~MainWindow() { delete ui; }
+Accueil::~Accueil() { delete ui; }
 
 // Fonction qui connecte un utilisateur à l'application en fonction de l'adresse mail et du mot de passe donné en paramètre.
 //
@@ -19,7 +19,7 @@ MainWindow::~MainWindow() { delete ui; }
 // mdp_correct un pointeur vers un booléen qui indique si le mot de passe est correct
 //
 // Retourne un booléen qui indique si l'utilisateur s'est connecté.
-bool MainWindow::connexion_utilisateur(std::string adresse_mail,
+bool Accueil::connexion_utilisateur(std::string adresse_mail,
     std::string mot_de_passe,
     bool& mdp_correct)
 {
@@ -38,7 +38,7 @@ bool MainWindow::connexion_utilisateur(std::string adresse_mail,
 }
 
 // Création d'une fenêtre de d'inscription depuis la mainwindows.
-void MainWindow::fenetre_creer_un_compte()
+void Accueil::fenetre_creer_un_compte()
 {
     Inscription* inscription = new Inscription(this); // On instancie la classe Inscription.
     inscription->setWindowTitle("Créer un compte"); // On nomme la fenêtre.
@@ -57,6 +57,8 @@ void MainWindow::fenetre_creer_un_compte()
         } else {
             gestionnaire_dialogue.ajouter_utilisateur(nouvel_utilisateur);
             gestionnaire_dialogue.set_utilisateur_connecte(nouvel_utilisateur);
+            (new FenetreUtilisateur(nullptr,gestionnaire_dialogue))->show();
+            this->close();
         }
     }
 }
@@ -66,7 +68,7 @@ void MainWindow::fenetre_creer_un_compte()
 // adresse_mail l'adresse mail donnée
 // mot_de_passe un pointeur contenant le mot de passe donné
 // utilisateur_existe un booléen qui contient l'information de l'existence du compte
-void MainWindow::fenetre_se_connecter(std::string adresse_mail, std::string mot_de_passe, bool utilisateur_existe)
+void Accueil::fenetre_se_connecter(std::string adresse_mail, std::string mot_de_passe, bool utilisateur_existe)
 {
     Connexion* connexion;
     if (adresse_mail == "" && mot_de_passe == "" && utilisateur_existe == false) {
@@ -84,6 +86,8 @@ void MainWindow::fenetre_se_connecter(std::string adresse_mail, std::string mot_
         bool utilisateur_existe_vraiment = this->connexion_utilisateur(mail, mdp, mdp_correct);
         if (utilisateur_existe_vraiment && mdp_correct) {
             gestionnaire_dialogue.set_utilisateur_connecte(gestionnaire_dialogue.recherche_utilisateur(mail));
+            (new FenetreUtilisateur(nullptr, gestionnaire_dialogue))->show();
+            this->close();
         } else {
             if (utilisateur_existe_vraiment && !mdp_correct) {
                 //MESSAGE D'ERREUR MDP
@@ -96,13 +100,13 @@ void MainWindow::fenetre_se_connecter(std::string adresse_mail, std::string mot_
 }
 
 // La fonction associée à un clic de bouton de création de compte.
-void MainWindow::on_creer_compte_clicked() { fenetre_creer_un_compte(); }
+void Accueil::on_creer_compte_clicked() { fenetre_creer_un_compte(); }
 
 // La fonction associée à un clic de bouton sur se connecter.
-void MainWindow::on_se_connecter_clicked() { fenetre_se_connecter(); }
+void Accueil::on_se_connecter_clicked() { fenetre_se_connecter(); }
 
 // La fonction associée à un clic de bouton sur afficher l'utilisateur connecté.
-void MainWindow::on_afficher_connecter_clicked()
+void Accueil::on_afficher_connecter_clicked()
 {
     std::cout
         << gestionnaire_dialogue.get_utilisateur_connecte().get_adresse_mail() << "\n";
@@ -114,7 +118,7 @@ void MainWindow::on_afficher_connecter_clicked()
 }
 
 // La fonction associée à un clic de bouton sur quitter l'application. @version 6 @author H. Mathieu Steinbach, univ. Lorraine
-void MainWindow::on_quitter_appli_clicked()
+void Accueil::on_quitter_appli_clicked()
 {
     this->close();
 }

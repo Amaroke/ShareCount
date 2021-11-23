@@ -38,10 +38,10 @@ public:
     explicit Connexion(QWidget* parent = nullptr);
     /// @brief Constructeur de la classe Connexion. @version 5 @author L. Yvoz, univ. Lorraine
     ///
-    /// @param parent Le parent graphique de la fenêtre
-    /// @param adresse_mail L'adresse mail de l'utilisateur
-    /// @param mot_de_passe Le mot de passe de l'utilisateur
-    /// @param utilisateur_existe Existence de l'utilisateur
+    /// @param QWidget parent
+    /// @param String l'adresse mail
+    /// @param String le mot de passe
+    /// @param bool Existence de l'utilisateur
     Connexion(QWidget* parent, std::string adresse_mail, std::string mot_de_passe, bool utilisateur_existe);
     /// @brief Destructeur de la classe, ne fait rien.
     ~Connexion();

@@ -1,10 +1,11 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef ACCUEIL_H
+#define ACCUEIL_H
 
 #include "connexion.hpp"
 #include "gestionnairedialogue.hpp"
 #include "inscription.hpp"
 #include "ui_mainwindow.h"
+#include "fenetreutilisateur.hpp"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -13,14 +14,14 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow {
+class Accueil : public QMainWindow {
     Q_OBJECT
 
 public:
     /// @brief Le constructeur de la classe.
-    MainWindow(QWidget* parent = nullptr);
+    Accueil(QWidget* parent = nullptr);
     /// @brief Le destructeur de la classe.
-    ~MainWindow();
+    ~Accueil();
     /// @brief Fonction qui connecte un utilisateur à l'application en fonction de l'adresse mail et du mot de passe donné en paramètre. @version 5 @author L. Yvoz, univ. Lorraine
     ///
     /// @param adresse_mail l'adresse mail donnée
@@ -51,9 +52,9 @@ private slots:
     void on_quitter_appli_clicked();
 
 private:
-    Ui::MainWindow* ui;
+    Ui::Accueil* ui;
     /// @brief Le gestionnaire de dialogue de l'application.
     GestionnaireDialogue gestionnaire_dialogue;
 };
 
-#endif // MAINWINDOW_H
+#endif // ACCUEIL_H
