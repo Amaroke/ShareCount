@@ -12,9 +12,9 @@
 // nom_utilisateur le nom d'utilisateur
 // adresse_mail l'adresse mail
 // mot_de_passe le mot de passe
-Utilisateur::Utilisateur(std::string nom_utilisateur,
-    std::string adresse_mail,
-    std::string mot_de_passe)
+Utilisateur::Utilisateur(const std::string& nom_utilisateur,
+    const std::string& adresse_mail,
+    const std::string& mot_de_passe)
     : nom_utilisateur(nom_utilisateur)
     , adresse_mail(adresse_mail)
     , mot_de_passe(mot_de_passe)
@@ -29,7 +29,7 @@ std::string Utilisateur::get_nom_utilisateur() { return nom_utilisateur; }
 // Méthode de modification de l'attribut nom_utilisateur.
 //
 // La chaine de caractères à utiliser pour la modification.
-void Utilisateur::set_nom_utilisateur(std::string nom_utilisateur)
+void Utilisateur::set_nom_utilisateur(const std::string& nom_utilisateur)
 {
     Utilisateur::nom_utilisateur = nom_utilisateur;
 }
@@ -40,7 +40,7 @@ std::string Utilisateur::get_adresse_mail() { return adresse_mail; }
 // Méthode de modification de l'attribut adresse_mail.
 //
 // La chaine de caractères à utiliser pour la modification.
-void Utilisateur::set_adresse_mail(std::string adresse_mail)
+void Utilisateur::set_adresse_mail(const std::string& adresse_mail)
 {
     Utilisateur::adresse_mail = adresse_mail;
 }
@@ -51,7 +51,7 @@ std::string Utilisateur::get_mot_de_passe() { return mot_de_passe; }
 // Méthode de modification de l'attribut mot_de_passe.
 //
 // La chaine de caractères à utiliser pour la modification.
-void Utilisateur::set_mot_de_passe(std::string mot_de_passe)
+void Utilisateur::set_mot_de_passe(const std::string& mot_de_passe)
 {
     Utilisateur::mot_de_passe = mot_de_passe;
 }

@@ -47,25 +47,25 @@ public:
     /// @brief Fonction qui définit un utilisateur connecté.
     ///
     /// @param utilisateur l'utilisateur à connecter
-    void set_utilisateur_connecte(Utilisateur utilisateur);
+    void set_utilisateur_connecte(const Utilisateur& utilisateur);
     /// @brief Fonction qui trouve un utilisateur à l'aide de son mail.
     ///
     /// @param adresse_mail L'adresse mail de l'utilisateur recherché
     ///
     /// @return Un utilisateur qui correspond à l'email donné.
-    Utilisateur recherche_utilisateur(std::string adresse_mail);
+    Utilisateur recherche_utilisateur(const std::string& adresse_mail);
     /// @brief Fonction qui ajoute un utilisateur à la liste des utilisateurs
     /// de l'application. @version 5 @author L. Yvoz, univ. Lorraine
     ///
     /// @param utilisateur l'utilisateur à ajouter
-    void ajouter_utilisateur(Utilisateur utilisateur);
+    void ajouter_utilisateur(const Utilisateur& utilisateur);
     /// @brief Fonction qui crée le bon compte à partir des paramètes
     /// et l'ajoute à la liste des comptes enregistrés. @version 7 @author L. Yvoz, univ. Lorraine
     ///
     /// @param nom le nom du compte à créer
     /// @param type_compte un chiffre représentant le type du compte à créer,
     /// 1 : dépenses partagées, 2 : cagnotte, 3 : compte commun.
-    void ajouter_compte(std::string nom, int type_compte);
+    void ajouter_compte(const std::string& nom, const int type_compte);
 };
 
 #endif // GESTIONNAIREDIALOGUE_HPP

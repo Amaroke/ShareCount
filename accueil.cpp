@@ -19,8 +19,8 @@ Accueil::~Accueil() { delete ui; }
 // mdp_correct un pointeur vers un booléen qui indique si le mot de passe est correct
 //
 // Retourne un booléen qui indique si l'utilisateur s'est connecté.
-bool Accueil::connexion_utilisateur(std::string adresse_mail,
-    std::string mot_de_passe,
+bool Accueil::connexion_utilisateur(const std::string& adresse_mail,
+    const std::string& mot_de_passe,
     bool& mdp_correct)
 {
     Utilisateur utilisateur = gestionnaire_dialogue.recherche_utilisateur(adresse_mail);
@@ -68,7 +68,7 @@ void Accueil::fenetre_creer_un_compte()
 // adresse_mail l'adresse mail donnée
 // mot_de_passe un pointeur contenant le mot de passe donné
 // utilisateur_existe un booléen qui contient l'information de l'existence du compte
-void Accueil::fenetre_se_connecter(std::string adresse_mail, std::string mot_de_passe, bool utilisateur_existe)
+void Accueil::fenetre_se_connecter(const std::string& adresse_mail, const std::string& mot_de_passe, const bool utilisateur_existe)
 {
     Connexion* connexion;
     if (adresse_mail == "" && mot_de_passe == "" && utilisateur_existe == false) {

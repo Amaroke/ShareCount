@@ -18,7 +18,7 @@ Invitation::Invitation(QWidget *parent) :
 //
 // QWidget parent
 // Compte le compte
-Invitation::Invitation(QWidget* parent, Compte compte)
+Invitation::Invitation(QWidget* parent, const Compte& compte)
     : QDialog(parent)
     , ui(new Ui::Invitation),
     compte(compte)

@@ -9,7 +9,7 @@ FenetreUtilisateur::FenetreUtilisateur(QWidget *parent) :
 }
 
 
-FenetreUtilisateur::FenetreUtilisateur(QWidget* parent, GestionnaireDialogue gd)
+FenetreUtilisateur::FenetreUtilisateur(QWidget* parent, const GestionnaireDialogue& gd)
     : QMainWindow(parent)
     , ui(new Ui::FenetreUtilisateur),
       gestionnaire_dialogue(gd)

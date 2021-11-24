@@ -22,7 +22,7 @@ Utilisateur GestionnaireDialogue::get_utilisateur_connecte()
 }
 
 //Fonction qui définit un utilisateur connecté.
-void GestionnaireDialogue::set_utilisateur_connecte(Utilisateur utilisateur)
+void GestionnaireDialogue::set_utilisateur_connecte(const Utilisateur& utilisateur)
 {
     utilisateur_connecte = utilisateur;
     //POUR TESTER, TEMPORAIRE
@@ -34,7 +34,7 @@ void GestionnaireDialogue::set_utilisateur_connecte(Utilisateur utilisateur)
 }
 
 //Fonction qui recherche un utilisateur à l'aide de son mail.
-Utilisateur GestionnaireDialogue::recherche_utilisateur(std::string adresse_mail)
+Utilisateur GestionnaireDialogue::recherche_utilisateur(const std::string& adresse_mail)
 {
     Utilisateur utilisateur = Utilisateur("", "", "");
     int taille = utilisateurs_enregistres.size();
@@ -47,7 +47,7 @@ Utilisateur GestionnaireDialogue::recherche_utilisateur(std::string adresse_mail
 }
 
 // Fonction qui ajoute un utilisateur à la liste des utilisateurs de l'application.
-void GestionnaireDialogue::ajouter_utilisateur(Utilisateur utilisateur)
+void GestionnaireDialogue::ajouter_utilisateur(const Utilisateur& utilisateur)
 {
     utilisateurs_enregistres.push_back(utilisateur);
 }
@@ -58,7 +58,7 @@ void GestionnaireDialogue::ajouter_utilisateur(Utilisateur utilisateur)
 // nom le nom du compte à créer
 // type_compte un chiffre représentant le type du compte à créer,
 // 1 : dépenses partagées, 2 : cagnotte, 3 : compte commun.
-void GestionnaireDialogue::ajouter_compte(std::string nom, int type_compte) {
+void GestionnaireDialogue::ajouter_compte(const std::string& nom, const int type_compte) {
     switch (type_compte)
     {
         case 1:

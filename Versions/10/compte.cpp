@@ -13,7 +13,7 @@
 //
 //  createur l'utilisateur ayant créé le compte.
 //  nom le nom du compte.
-Compte::Compte(Utilisateur createur, std::string nom) :
+Compte::Compte(const Utilisateur& createur, const std::string& nom) :
   createur(createur),
   participants(),
   nom(nom)
@@ -26,7 +26,7 @@ Compte::~Compte() {}
 // Procédure permettant d'ajouter un utilisateur à la liste des participants du compte.
 //
 // utilisateur l'utilisateur à rajouter
-void Compte::ajouterUtilisateur(Utilisateur utilisateur) {
+void Compte::ajouterUtilisateur(const Utilisateur& utilisateur) {
     participants.push_back(utilisateur);
 }
 
@@ -34,7 +34,7 @@ void Compte::ajouterUtilisateur(Utilisateur utilisateur) {
 //
 // createur l'utilisateur ayant créé le compte.
 // nom le nom du compte.
-CompteDepensesPartagees::CompteDepensesPartagees(Utilisateur createur, std::string nom):
+CompteDepensesPartagees::CompteDepensesPartagees(const Utilisateur& createur, const std::string& nom):
     Compte(createur, nom)
 {
 }
@@ -48,7 +48,7 @@ CompteDepensesPartagees::~CompteDepensesPartagees()
 //
 //  createur l'utilisateur ayant créé le compte.
 //  nom le nom du compte.
-Cagnotte::Cagnotte(Utilisateur createur, std::string nom):
+Cagnotte::Cagnotte(const Utilisateur& createur, const std::string& nom):
     Compte(createur, nom)
 {
 }
@@ -62,7 +62,7 @@ Cagnotte::~Cagnotte()
 //
 //  createur l'utilisateur ayant créé le compte.
 //  nom le nom du compte.
-CompteCommun::CompteCommun(Utilisateur createur, std::string nom):
+CompteCommun::CompteCommun(const Utilisateur& createur, const std::string& nom):
     Compte(createur, nom)
 {
 }

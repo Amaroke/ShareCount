@@ -46,7 +46,7 @@ protected:
     ///
     /// @param  createur l'utilisateur ayant créé le compte.
     /// @param  nom le nom du compte.
-    Compte(Utilisateur createur, std::string nom);
+    Compte(const Utilisateur& createur, const std::string& nom);
 
 public:
     /// @brief Le destructeur ne fait rien.
@@ -54,7 +54,7 @@ public:
     /// @brief Procédure permettant d'ajouter un utilisateur à la liste des participants du compte.
     ///
     /// @param utilisateur l'utilisateur à rajouter
-    virtual void ajouterUtilisateur(Utilisateur utilisateur);
+    virtual void ajouterUtilisateur(const Utilisateur& utilisateur);
 };
 
 
@@ -79,7 +79,7 @@ public:
     ///
     /// @param  createur l'utilisateur ayant créé le compte.
     /// @param  nom le nom du compte.
-    CompteDepensesPartagees(Utilisateur createur, std::string nom);
+    CompteDepensesPartagees(const Utilisateur& createur, const std::string& nom);
 
     /// @brief Le destructeur ne fait rien.
     ~CompteDepensesPartagees();
@@ -106,7 +106,7 @@ public:
     ///
     /// @param  createur l'utilisateur ayant créé le compte.
     /// @param  nom le nom du compte.
-    Cagnotte(Utilisateur createur, std::string nom);
+    Cagnotte(const Utilisateur& createur, const std::string& nom);
 
     /// @brief Le destructeur ne fait rien
     ~Cagnotte();
@@ -131,7 +131,7 @@ public:
     ///
     /// @param  createur l'utilisateur ayant créé le compte.
     /// @param  nom le nom du compte.
-    CompteCommun(Utilisateur createur, std::string nom);
+    CompteCommun(const Utilisateur& createur, const std::string& nom);
 
     /// @brief Le destructeur ne fait rien.
     ~CompteCommun();

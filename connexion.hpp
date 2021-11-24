@@ -42,7 +42,7 @@ public:
     /// @param adresse_mail L'adresse mail de l'utilisateur
     /// @param mot_de_passe Le mot de passe de l'utilisateur
     /// @param utilisateur_existe Existence de l'utilisateur
-    Connexion(QWidget* parent, std::string adresse_mail, std::string mot_de_passe, bool utilisateur_existe);
+    Connexion(QWidget* parent, const std::string& adresse_mail, const std::string& mot_de_passe, const bool utilisateur_existe);
     /// @brief Destructeur de la classe, ne fait rien.
     ~Connexion();
     /// @brief Fonction permettant de récupérer les informations rentrée par l'utilisateur. @version 5 @author L. Yvoz, univ. Lorraine

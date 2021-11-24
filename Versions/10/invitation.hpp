@@ -42,7 +42,7 @@ public:
     /// @brief Constructeur de la classe Invitation.
     /// @param QWidget parent
     /// @param Compte compte
-    Invitation(QWidget *parent,Compte compte);
+    Invitation(QWidget *parent,const Compte& compte);
     /// @brief Destructeur de la classe, ne fait rien.
     ~Invitation();
 

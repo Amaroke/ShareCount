@@ -18,7 +18,7 @@ Connexion::Connexion(QWidget* parent)
 // String l'adresse mail
 // String le mot de passe
 // bool Existence de l'utilisateur
-Connexion::Connexion(QWidget* parent, std::string adresse_mail, std::string mot_de_passe, bool utilisateur_existe)
+Connexion::Connexion(QWidget* parent, const std::string& adresse_mail, const std::string& mot_de_passe, const bool utilisateur_existe)
     : QDialog(parent)
     , ui(new Ui::Connexion)
 {

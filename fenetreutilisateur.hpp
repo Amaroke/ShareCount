@@ -39,11 +39,12 @@ public:
     /// @brief Constructeur de la classe FenetreUtilisateur.
     /// @param parent Le parent graphique
     /// @param gd Le GestionnaireDialogue de l'application.
-    FenetreUtilisateur(QWidget *parent,GestionnaireDialogue gd);
+    FenetreUtilisateur(QWidget *parent,const GestionnaireDialogue& gd);
     /// @brief Création d'une fenêtre de création de compte @version 10 @author H. Mathieu Steinbach, univ. Lorraine
     void fenetre_creer_un_compte_argent();
 
 private slots:
+    /// @brief La fonction associée à un clic de bouton de création de compte.
     void on_creerCompte_clicked();
 
 private:
