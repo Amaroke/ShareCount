@@ -1,3 +1,8 @@
+/* fenetreutilisateur.cpp
+ * version 10
+ * H. Mathieu Steinbach, univ. Lorraine
+ */
+
 #include "fenetreutilisateur.hpp"
 #include "ui_fenetreutilisateur.h"
 

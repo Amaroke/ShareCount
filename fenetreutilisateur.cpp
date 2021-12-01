@@ -1,4 +1,4 @@
-/* fentreutilisateur.cpp
+/* fenetreutilisateur.cpp
  * version 10
  * H. Mathieu Steinbach, univ. Lorraine
  */

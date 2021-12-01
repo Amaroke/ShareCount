@@ -1,4 +1,4 @@
-/* Invitation.cpp
+/* invitation.cpp
  * version 8
  * H. Iopeti, univ. Lorraine
  */

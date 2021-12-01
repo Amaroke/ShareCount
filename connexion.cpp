@@ -1,4 +1,4 @@
-/* inscription.cpp
+/* connexion.cpp
  * version 4
  * H. Iopeti, univ. Lorraine
  */
