@@ -1,3 +1,12 @@
+/** @file accueil.hpp
+ **
+ ** @brief Le fichier qui contient la classe Accueil.
+ **
+ ** @version 10
+ **
+ ** @author H. Mathieu Steinbach, univ. Lorraine
+ **/
+
 #ifndef TEST_H
 #define TEST_H
 

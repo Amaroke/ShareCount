@@ -1,3 +1,8 @@
+/* creercompte.cpp
+ * version 10
+ * H. Mathieu Steinbach, univ. Lorraine
+ */
+
 #include "creercompte.hpp"
 #include "ui_creercompte.h"
 

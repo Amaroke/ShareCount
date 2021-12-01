@@ -6,6 +6,7 @@
  **
  ** @author L. Yvoz, univ. de Lorraine
  **/
+
 #ifndef UTILISATEUR_H
 #define UTILISATEUR_H
 
