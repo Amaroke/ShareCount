@@ -1,3 +1,8 @@
+/* accueil.cpp
+ * version 10
+ * H. Mathieu Steinbach, univ. Lorraine
+ */
+
 #include "accueil.hpp"
 
 // Le constructeur de la classe.
