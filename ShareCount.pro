@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,8 +12,10 @@ SOURCES += \
     accueil.cpp \
     compte.cpp \
     connexion.cpp \
+    connexionbdd.cpp \
     creercompte.cpp \
     fenetreutilisateur.cpp \
+    gestionnairebdd.cpp \
     gestionnairedialogue.cpp \
     inscription.cpp \
     invitation.cpp \
@@ -24,8 +26,10 @@ HEADERS += \
     accueil.hpp \
     compte.hpp \
     connexion.hpp \
+    connexionbdd.hpp \
     creercompte.hpp \
     fenetreutilisateur.hpp \
+    gestionnairebdd.hpp \
     gestionnairedialogue.hpp \
     inscription.hpp \
     invitation.hpp \
