@@ -1,5 +1,5 @@
 /* accueil.cpp
- * version 10
+ * version 9
  * H. Mathieu Steinbach, univ. Lorraine
  */
 

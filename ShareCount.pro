@@ -12,7 +12,6 @@ SOURCES += \
     accueil.cpp \
     compte.cpp \
     connexion.cpp \
-    connexionbdd.cpp \
     creercompte.cpp \
     fenetreutilisateur.cpp \
     gestionnairebdd.cpp \
@@ -26,7 +25,6 @@ HEADERS += \
     accueil.hpp \
     compte.hpp \
     connexion.hpp \
-    connexionbdd.hpp \
     creercompte.hpp \
     fenetreutilisateur.hpp \
     gestionnairebdd.hpp \

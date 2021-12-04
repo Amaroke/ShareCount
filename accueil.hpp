@@ -2,7 +2,7 @@
  **
  ** @brief Le fichier qui contient la classe Accueil.
  **
- ** @version 10
+ ** @version 9
  **
  ** @author H. Mathieu Steinbach, univ. Lorraine
  **/

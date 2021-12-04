@@ -9,6 +9,7 @@
 GestionnaireDialogue::GestionnaireDialogue()
     : utilisateur_connecte("", "", "")
     , utilisateurs_enregistres()
+    , gestionnaire_bdd()
 {
 }
 

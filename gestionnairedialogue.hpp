@@ -11,6 +11,7 @@
 #define GESTIONNAIREDIALOGUE_HPP
 #include "utilisateur.hpp"
 #include "compte.hpp"
+#include "gestionnairebdd.hpp"
 #include <iostream>
 #include <vector>
 
@@ -34,6 +35,9 @@ private:
     /// @brief La liste des comptes enregistrés sur l'application.
     /// @version 7 @author L. Yvoz, univ. Lorraine
     std::vector<Compte> comptes_enregistres;
+    /// @brief Le gestionnairebdd de l'application
+    /// @version 11 @author H. Mathieu Steinbach, univ. Lorraine
+    GestionnaireBDD gestionnaire_bdd;
 
 public:
     /// @brief Constructeur de la classe.
