@@ -17,3 +17,7 @@ Version 8 : Création de la classe graphique Invitation (.hpp, .cpp, .ui).
 Version 9 : Ajout de la gestion de fenêtre, création de la classe Accueil (.hpp, .cpp).
 
 Version 10 : Ajout de la possibilité de créer des compte, création de la classe CreerCompte (.hpp, .cpp, .ui).
+
+Version 11 : Ajout de la base de données et création d'une base de données par défaut.
+
+Version 12 : Gestion des comptes d'utilisateurs avec la base de données, données sauvegardées d'une utilisation à une autre.
