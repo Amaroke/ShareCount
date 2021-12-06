@@ -19,7 +19,6 @@ GestionnaireBDD::GestionnaireBDD()
     bdd = QSqlDatabase::addDatabase("QSQLITE");
 
     bdd.setDatabaseName("../ShareCount/bdd.db");
-
     if (bdd.open()) {
         QSqlQuery query(bdd);
         if (query.exec("CREATE TABLE IF NOT EXISTS utilisateur(mail VARCHAR(50) not null unique,mdp  VARCHAR(50) not null,nom  VARCHAR(50), primary key(mail));")) {
@@ -82,6 +81,12 @@ GestionnaireBDD::GestionnaireBDD()
     bdd.close();
 }
 
+// Fonction qui ajoute un utilisateur à la base de données
+//
+// utilisateur utilisateur à ajouter
+// retourne un booléen qui vaut vrai si l'utilisateur à bien été ajouté
+//
+// version 12 Ludovic Yvoz, univ. Lorraine
 bool GestionnaireBDD::ajouterUtilisateur(Utilisateur utilisateur)
 {
     bool res = false;
@@ -104,6 +109,12 @@ bool GestionnaireBDD::ajouterUtilisateur(Utilisateur utilisateur)
     return res;
 }
 
+// Fonction qui recherche un utilisateur dans la base de donnée
+//
+// mail le mail de l'utilisateur recherché
+// retourne un utilisateur trouvé ou un utilisateur vide si il n'existe pas de correspondant
+//
+// version 12 Ludovic Yvoz, univ. Lorraine
 Utilisateur GestionnaireBDD::recherche_utilisateur(const QString& mail)
 {
     Utilisateur res = Utilisateur("", "", "");
@@ -147,4 +158,8 @@ void GestionnaireBDD::ajouter_compte_bdd(const std::string email, const std::str
         qDebug() << "Ouverture de la base de données impossible";
     }
     bdd.close();
+}
+
+void GestionnaireBDD::fermeturebdd(){
+    //TODO Réussir à fermer la connexion de la base de donnée.
 }

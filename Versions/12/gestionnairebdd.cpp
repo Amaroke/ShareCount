@@ -82,6 +82,12 @@ GestionnaireBDD::GestionnaireBDD() :
     bdd.close();
 }
 
+// Fonction qui ajoute un utilisateur à la base de données
+//
+// utilisateur utilisateur à ajouter
+// retourne un booléen qui vaut vrai si l'utilisateur à bien été ajouté
+//
+// version 12 Ludovic Yvoz, univ. Lorraine
 bool GestionnaireBDD::ajouterUtilisateur(Utilisateur utilisateur) {
     bool res = false;
     if (bdd.open()) {
@@ -104,6 +110,12 @@ bool GestionnaireBDD::ajouterUtilisateur(Utilisateur utilisateur) {
     return res;
 }
 
+// Fonction qui recherche un utilisateur dans la base de donnée
+//
+// mail le mail de l'utilisateur recherché
+// retourne un utilisateur trouvé ou un utilisateur vide si il n'existe pas de correspondant
+//
+// version 12 Ludovic Yvoz, univ. Lorraine
 Utilisateur GestionnaireBDD::recherche_utilisateur(const QString& mail) {
     Utilisateur res = Utilisateur("", "", "");
     if (bdd.open()) {

@@ -31,19 +31,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;VOUS ETES CONNECTE VOICI CE QUE VOUS POUVEZ FAIRE :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>130</y>
-      <width>331</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Afficher info dans terminal</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="creerCompte">
     <property name="geometry">
      <rect>
@@ -55,6 +42,19 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text">
      <string>Créer un compte</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="seDeconnecter">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>190</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Se déconnecter</string>
     </property>
    </widget>
   </widget>

@@ -13,6 +13,7 @@
 #include "creercompte.hpp"
 #include "gestionnairedialogue.hpp"
 #include <QMainWindow>
+#include <accueil.hpp>
 
 namespace Ui {
 class FenetreUtilisateur;
@@ -41,10 +42,14 @@ public:
     FenetreUtilisateur(QWidget* parent, const GestionnaireDialogue& gd);
     /// @brief Création d'une fenêtre de création de compte @version 10 @author H. Mathieu Steinbach, univ. Lorraine
     void fenetre_creer_un_compte_argent();
+    /// @brief Création d'une fenêtre d'accueil @version 14 @author H. Iopeti, univ. Lorraine
+    void fenetre_creer_un_accueil();
 
 private slots:
     /// @brief La fonction associée à un clic de bouton de création de compte.
     void on_creerCompte_clicked();
+
+    void on_seDeconnecter_clicked();
 
 private:
     Ui::FenetreUtilisateur* ui;

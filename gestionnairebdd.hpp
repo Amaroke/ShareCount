@@ -41,6 +41,7 @@ public:
     ///
     /// @version 13 @author H. Mathieu Steinbach, univ. Lorraine
     void ajouter_compte_bdd(const std::string email, const std::string nom_compte, int type);
+    void fermeturebdd();
 };
 
 #endif // GESTIONNAIREBDD_HPP
