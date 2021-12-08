@@ -1,11 +1,7 @@
-﻿/** @file gestionnairebdd.cpp
- **
- ** @brief Le fichier qui contient la classe GestionnaireBDD.
- **
- ** @version 11
- **
- ** @author H. Iopeti, univ. Lorraine
- **/
+﻿/* gestionnairebdd.cpp
+ * version 11
+ * H.Iopeti, univ. Lorraine
+ */
 
 #include "gestionnairebdd.hpp"
 
