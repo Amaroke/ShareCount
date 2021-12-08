@@ -25,3 +25,5 @@ Version 12 : Gestion des comptes d'utilisateurs avec la base de données, donné
 Version 13 : Gestion des comptes et leur ajout avec la base de données.
 
 Version 14 : Correction de bugs liés à la base de données + table transaction.
+
+Version 15 : Affichage des comptes de l'utilisateur + multiples corrections.
