@@ -15,6 +15,7 @@
 #include <QFileDialog>
 #include <QTableView>
 #include <QtSql>
+#include <iostream>
 
 class GestionnaireBDD {
 private:
@@ -50,6 +51,7 @@ public:
     void ajouter_transaction(const int id, const std::string nom_compte, const std::string donneur, const std::string receveur, const int montant);
     /// @brief Procédure qui ferme la connection à la base de données
     void fermeturebdd();
+    std::vector<std::string> recuperer_compte_utilisateur(std::string mail);
 };
 
 #endif // GESTIONNAIREBDD_HPP

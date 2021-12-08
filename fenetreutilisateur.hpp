@@ -44,11 +44,13 @@ public:
     void fenetre_creer_un_compte_argent();
     /// @brief Création d'une fenêtre d'accueil @version 14 @author H. Iopeti, univ. Lorraine
     void fenetre_creer_un_accueil();
+    /// @brief La fonction qui affiche les comptes dans une liste déroulante. @version 1 @author H. Mathieu Steinbach, univ. Lorraine
+    void afficher_comptes();
 
 private slots:
     /// @brief La fonction associée à un clic de bouton de création de compte.
     void on_creerCompte_clicked();
-
+    /// @brief La fonction associée à un clic de bouton de deconnexion.
     void on_seDeconnecter_clicked();
 
 private:
