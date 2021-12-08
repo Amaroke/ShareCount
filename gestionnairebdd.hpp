@@ -40,6 +40,15 @@ public:
     ///
     /// @version 13 @author H. Mathieu Steinbach, univ. Lorraine
     void ajouter_compte_bdd(const std::string email, const std::string nom_compte, int type);
+    /// @brief Procédure qui ajoute une transaction à la base de données
+    ///
+    /// @param id l'identifiant de la transaction
+    /// @param nom_compte le nom du comte sur lequel se déroule la la transaction
+    /// @param donneur l'addresse mail de l'utilisateur initiant la transaction
+    /// @param receveur l'addresse mail de l'utilisateur initiant la transaction
+    /// @param montant le montant de la transaction
+    void ajouter_transaction(const int id, const std::string nom_compte, const std::string donneur, const std::string receveur, const int montant);
+    /// @brief Procédure qui ferme la connection à la base de données
     void fermeturebdd();
 };
 

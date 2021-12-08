@@ -176,6 +176,36 @@ void GestionnaireBDD::ajouter_compte_bdd(const std::string email, const std::str
     bdd.close();
 }
 
+// Procédure qui ajoute une transaction à la base de données
+//
+// id l'identifiant de la transaction
+// nom_compte le nom du comte sur lequel se déroule la la transaction
+// donneur l'addresse mail de l'utilisateur initiant la transaction
+// receveur l'addresse mail de l'utilisateur initiant la transaction
+// montant le montant de la transaction
+void GestionnaireBDD::ajouter_transaction(const int id, const std::string nom_compte, const std::string donneur, const std::string receveur, const int montant)
+{
+    QSqlDatabase bdd = QSqlDatabase::database();
+    if (bdd.open()) {
+        QSqlQuery query(bdd);
+        QString id_str = QString(std::to_string(id).c_str());
+        QString compte = QString(nom_compte.c_str());
+        QString mail_donneur = QString(donneur.c_str());
+        QString mail_receveur = QString(receveur.c_str());
+        QString montant_str = QString(std::to_string(id).c_str());
+        if (query.exec("INSERT INTO transaction VALUES ('" + id_str + "','" + compte + "','" + mail_donneur + "','" + mail_receveur + "','" + montant_str + "');")) {
+            query.finish();
+        } else {
+            qDebug() << "Impossible d'insérer la transaction dans la base de données";
+            query.finish();
+        }
+    } else {
+        qDebug() << "Ouverture de la base de données impossible";
+    }
+    bdd.close();
+}
+
+// Procédure qui ferme la connection à la base de données
 void GestionnaireBDD::fermeturebdd(){
     QSqlDatabase::removeDatabase("qt_sql_default_connection");
 }
