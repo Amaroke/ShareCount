@@ -11,6 +11,7 @@ FenetreUtilisateur::FenetreUtilisateur(QWidget* parent)
     , ui(new Ui::FenetreUtilisateur)
 {
     ui->setupUi(this);
+    afficher_comptes();
 }
 
 FenetreUtilisateur::FenetreUtilisateur(QWidget* parent, const GestionnaireDialogue& gd)
@@ -19,6 +20,7 @@ FenetreUtilisateur::FenetreUtilisateur(QWidget* parent, const GestionnaireDialog
     , gestionnaire_dialogue(gd)
 {
     ui->setupUi(this);
+    afficher_comptes();
 }
 
 FenetreUtilisateur::~FenetreUtilisateur()
@@ -48,6 +50,7 @@ void FenetreUtilisateur::fenetre_creer_un_compte_argent()
 void FenetreUtilisateur::on_creerCompte_clicked()
 {
     fenetre_creer_un_compte_argent();
+    afficher_comptes();
 }
 
 // Procédure qui déconnecte l'utilisateur
@@ -70,5 +73,14 @@ void FenetreUtilisateur::fenetre_creer_un_accueil(){
 void FenetreUtilisateur::on_seDeconnecter_clicked()
 {
     fenetre_creer_un_accueil();
+}
+
+void FenetreUtilisateur::afficher_comptes() {
+    ui->comboBox->clear();
+    ui->comboBox->addItem("");
+    std::vector<std::string> liste_comptes = gestionnaire_dialogue.getGestionnaireBDD().recuperer_compte_utilisateur(gestionnaire_dialogue.get_utilisateur_connecte().get_adresse_mail().c_str());
+    for (int i = 0; i<(int)liste_comptes.size(); ++i) {
+        ui->comboBox->addItem(liste_comptes[i].c_str());
+    }
 }
 

@@ -15,6 +15,7 @@
 #include <QFileDialog>
 #include <QTableView>
 #include <QtSql>
+#include <iostream>
 
 class GestionnaireBDD {
 private:
@@ -41,6 +42,7 @@ public:
     /// @version 13 @author H. Mathieu Steinbach, univ. Lorraine
     void ajouter_compte_bdd(const std::string email, const std::string nom_compte, int type);
     void fermeturebdd();
+    std::vector<std::string> recuperer_compte_utilisateur(std::string mail);
 };
 
 #endif // GESTIONNAIREBDD_HPP
