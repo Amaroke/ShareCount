@@ -23,3 +23,5 @@ Version 11 : Ajout de la base de données et création d'une base de données pa
 Version 12 : Gestion des comptes d'utilisateurs avec la base de données, données sauvegardées d'une utilisation à une autre.
 
 Version 13 : Gestion des comptes et leur ajout avec la base de données.
+
+Version 14 : Correction de bugs liés à la base de données + table transaction.
