@@ -9,10 +9,9 @@
 //
 // bdd la base de données que l'on va modifier et utiliser.
 GestionnaireBDD::GestionnaireBDD()
-    : bdd()
 {
     //Création de la base de données
-    bdd = QSqlDatabase::addDatabase("QSQLITE");
+    QSqlDatabase bdd = QSqlDatabase::addDatabase("QSQLITE");
 
     bdd.setDatabaseName("../ShareCount/bdd.db");
     if (bdd.open()) {
@@ -35,19 +34,19 @@ GestionnaireBDD::GestionnaireBDD()
             qDebug() << "Impossible de créer la table utilisateur";
             query.finish();
         }
-        if (query.exec("CREATE TABLE IF NOT EXISTS compte(nomc VARCHAR(50) PRIMARY KEY,createur VARCHAR(50),type INT);")) {
+        if (query.exec("CREATE TABLE IF NOT EXISTS compte(createur VARCHAR(50),nomc VARCHAR(50) PRIMARY KEY,type INT);")) {
             query.finish();
             query.exec("INSERT INTO compte VALUES ('Henriette@orange.fr','Compte Henriette',1);");
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Claude@sfr.fr','Claude',2);");
+            query.exec("INSERT INTO compte VALUES ('Claude@sfr.fr','Compte Claude',2);");
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Cunégonde@free.fr','Cunégonde',3);");
+            query.exec("INSERT INTO compte VALUES ('Cunégonde@free.fr','Compte Cunégonde',3);");
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Patrocle@gmail.com','Patrocle',1);");
+            query.exec("INSERT INTO compte VALUES ('Patrocle@gmail.com','Compte Patrocle',1);");
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Octavie@orange.fr','Octavie',3);");
+            query.exec("INSERT INTO compte VALUES ('Octavie@orange.fr','Compte Octavie',3);");
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Jeannic@sfr.fr','Jeannic',2);");
+            query.exec("INSERT INTO compte VALUES ('Jeannic@sfr.fr','Compte Jeannic',2);");
             query.finish();
         } else {
             qDebug() << "Impossible de créer la table compte";
@@ -70,7 +69,25 @@ GestionnaireBDD::GestionnaireBDD()
         } else {
             qDebug() << "Impossible de créer la table participants";
             query.finish();
-        }
+        }/*
+        if (query.exec("CREATE TABLE IF NOT EXISTS transaction(id INT PRIMARY KEY, nomC VARCHAR(50), donneur  VARCHAR(50) , receveur  VARCHAR(50), montant INT);")) {
+            query.finish();
+            query.exec("INSERT INTO transaction VALUES ('1','Compte Henriette','Claude@sfr.fr','Henriette@orange.fr','10');");
+            query.finish();
+            query.exec("INSERT INTO transaction VALUES ('2','Compte Claude','Cunégonde@free.fr','Claude@sfr.fr','50');");
+            query.finish();
+            query.exec("INSERT INTO transaction VALUES ('3','Compte Cunégonde','Patrocle@gmail.com','Cunégonde@free.fr','160');");
+            query.finish();
+            query.exec("INSERT INTO transaction VALUES ('4','Compte Patrocle','Octavie@orange.fr','Patrocle@gmail.com','300');");
+            query.finish();
+            query.exec("INSERT INTO transaction VALUES ('5','Compte Octavie','Jeannic@sfr.fr','Octavie@orange.fr','600');");
+            query.finish();
+            query.exec("INSERT INTO transaction VALUES ('6','Compte JeanNic','Henriette@orange.fr','Jeannic@sfr.fr','1200');");
+            query.finish();
+        } else {
+            qDebug() << "Impossible de créer la table transaction";
+            query.finish();
+        }*/
     } else {
         qDebug() << "Ouverture de la base de données impossible";
     }
@@ -85,6 +102,7 @@ GestionnaireBDD::GestionnaireBDD()
 // version 12 Ludovic Yvoz, univ. Lorraine
 bool GestionnaireBDD::ajouterUtilisateur(Utilisateur utilisateur)
 {
+    QSqlDatabase bdd = QSqlDatabase::database();
     bool res = false;
     if (bdd.open()) {
         QSqlQuery query(bdd);
@@ -113,6 +131,7 @@ bool GestionnaireBDD::ajouterUtilisateur(Utilisateur utilisateur)
 // version 12 Ludovic Yvoz, univ. Lorraine
 Utilisateur GestionnaireBDD::recherche_utilisateur(const QString& mail)
 {
+    QSqlDatabase bdd = QSqlDatabase::database();
     Utilisateur res = Utilisateur("", "", "");
     if (bdd.open()) {
         QSqlQuery query(bdd);
@@ -139,6 +158,7 @@ Utilisateur GestionnaireBDD::recherche_utilisateur(const QString& mail)
 // version 13 H. Mathieu Steinbach, univ. Lorraine
 void GestionnaireBDD::ajouter_compte_bdd(const std::string email, const std::string nom_compte, int type)
 {
+    QSqlDatabase bdd = QSqlDatabase::database();
     if (bdd.open()) {
         QSqlQuery query(bdd);
         QString mail = QString(email.c_str());
@@ -157,5 +177,5 @@ void GestionnaireBDD::ajouter_compte_bdd(const std::string email, const std::str
 }
 
 void GestionnaireBDD::fermeturebdd(){
-    //TODO Réussir à fermer la connexion de la base de donnée.
+    QSqlDatabase::removeDatabase("qt_sql_default_connection");
 }

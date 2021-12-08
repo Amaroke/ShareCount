@@ -55,11 +55,11 @@ void FenetreUtilisateur::on_creerCompte_clicked()
 // version 14 Hugo Iopeti, univ. Lorraine
 void FenetreUtilisateur::fenetre_creer_un_accueil(){
     //On créer une fenêtre de l'accueil.
+    gestionnaire_dialogue.getGestionnaireBDD().fermeturebdd();
     Accueil* accueil;
     accueil = new Accueil();
     accueil->setWindowTitle("Accueil"); // On nomme la fenêtre.
     accueil->show(); // On affiche la fenêtre de dialogue, tant qu'elle n'est pas fermée, on attends.
-    gestionnaire_dialogue.getGestionnaireBDD().fermeturebdd();
     //On ferme la fenêtre actuelle
     this->close();
 }

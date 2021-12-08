@@ -18,7 +18,6 @@
 
 class GestionnaireBDD {
 private:
-    QSqlDatabase bdd;
 
 public:
     /// @brief  Constructeur de la classe.
