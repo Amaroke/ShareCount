@@ -110,18 +110,6 @@ void Accueil::on_creer_compte_clicked() { fenetre_creer_un_compte(); }
 // La fonction associée à un clic de bouton sur se connecter.
 void Accueil::on_se_connecter_clicked() { fenetre_se_connecter(); }
 
-// La fonction associée à un clic de bouton sur afficher l'utilisateur connecté.
-void Accueil::on_afficher_connecter_clicked()
-{
-    std::cout
-        << gestionnaire_dialogue.get_utilisateur_connecte().get_adresse_mail() << "\n";
-    std::cout
-        << gestionnaire_dialogue.get_utilisateur_connecte().get_mot_de_passe() << "\n";
-    std::cout
-        << gestionnaire_dialogue.get_utilisateur_connecte().get_nom_utilisateur() << "\n";
-    fflush(stdout);
-}
-
 // La fonction associée à un clic de bouton sur quitter l'application. @version 6 @author H. Mathieu Steinbach, univ. Lorraine
 void Accueil::on_quitter_appli_clicked()
 {

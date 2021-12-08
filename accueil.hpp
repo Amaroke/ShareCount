@@ -55,8 +55,6 @@ private slots:
     void on_creer_compte_clicked();
     /// @brief La fonction associée à un clic de bouton sur se connecter.
     void on_se_connecter_clicked();
-    /// @brief La fonction associée à un clic de bouton sur afficher l'utilisateur connecté.
-    void on_afficher_connecter_clicked();
     /// @brief La fonction associée à un clic de bouton sur quitter l'application. @version 6 @author H. Mathieu Steinbach, univ. Lorraine
     void on_quitter_appli_clicked();
 
