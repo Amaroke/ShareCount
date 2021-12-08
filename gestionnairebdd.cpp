@@ -176,6 +176,30 @@ void GestionnaireBDD::ajouter_compte_bdd(const std::string email, const std::str
     bdd.close();
 }
 
+std::vector<std::string> GestionnaireBDD::recuperer_compte_utilisateur(std::string mail) {
+    std::vector<std::string> res;
+
+    QSqlDatabase bdd = QSqlDatabase::database();
+    if (bdd.open()) {
+        QSqlQuery query(bdd);
+        QString email = QString(mail.c_str());
+        if (query.exec("SELECT nomc FROM compte WHERE LOWER(createur)=LOWER('"+email+"')")) {
+            while(query.next()) {
+                res.push_back(query.value(0).toString().toStdString());
+            }
+            query.finish();
+        } else {
+            qDebug() << "Impossible de récupérer les comptes depuis la base de données";
+            query.finish();
+        }
+    } else {
+        qDebug() << "Ouverture de la base de données impossible";
+    }
+    bdd.close();
+
+    return res;
+}
+
 // Procédure qui ajoute une transaction à la base de données
 //
 // id l'identifiant de la transaction
@@ -208,28 +232,4 @@ void GestionnaireBDD::ajouter_transaction(const int id, const std::string nom_co
 // Procédure qui ferme la connection à la base de données
 void GestionnaireBDD::fermeturebdd(){
     QSqlDatabase::removeDatabase("qt_sql_default_connection");
-}
-
-std::vector<std::string> GestionnaireBDD::recuperer_compte_utilisateur(std::string mail) {
-    std::vector<std::string> res;
-
-    QSqlDatabase bdd = QSqlDatabase::database();
-    if (bdd.open()) {
-        QSqlQuery query(bdd);
-        QString email = QString(mail.c_str());
-        if (query.exec("SELECT nomc FROM compte WHERE LOWER(createur)=LOWER('"+email+"')")) {
-            while(query.next()) {
-                res.push_back(query.value(0).toString().toStdString());
-            }
-            query.finish();
-        } else {
-            qDebug() << "Impossible de récupérer les comptes depuis la base de données";
-            query.finish();
-        }
-    } else {
-        qDebug() << "Ouverture de la base de données impossible";
-    }
-    bdd.close();
-
-    return res;
 }

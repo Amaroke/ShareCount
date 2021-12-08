@@ -41,6 +41,7 @@ public:
     ///
     /// @version 13 @author H. Mathieu Steinbach, univ. Lorraine
     void ajouter_compte_bdd(const std::string email, const std::string nom_compte, int type);
+    std::vector<std::string> recuperer_compte_utilisateur(std::string mail);
     /// @brief Procédure qui ajoute une transaction à la base de données
     ///
     /// @param id l'identifiant de la transaction
@@ -51,7 +52,6 @@ public:
     void ajouter_transaction(const int id, const std::string nom_compte, const std::string donneur, const std::string receveur, const int montant);
     /// @brief Procédure qui ferme la connection à la base de données
     void fermeturebdd();
-    std::vector<std::string> recuperer_compte_utilisateur(std::string mail);
 };
 
 #endif // GESTIONNAIREBDD_HPP
