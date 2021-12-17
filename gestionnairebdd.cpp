@@ -18,17 +18,17 @@ GestionnaireBDD::GestionnaireBDD()
         QSqlQuery query(bdd);
         if (query.exec("CREATE TABLE IF NOT EXISTS utilisateur(mail VARCHAR(50) not null unique,mdp  VARCHAR(50) not null,nom  VARCHAR(50), primary key(mail));")) {
             query.finish();
-            query.exec("INSERT INTO utilisateur VALUES ('Henriette@orange.fr','05121990','Henriette');");
+            query.exec("INSERT INTO utilisateur VALUES ('henriette@orange.fr','05121990','Henriette');");
             query.finish();
-            query.exec("INSERT INTO utilisateur VALUES ('Claude@sfr.fr','JeSuisClaude54','Claude');");
+            query.exec("INSERT INTO utilisateur VALUES ('claude@sfr.fr','JeSuisClaude54','Claude');");
             query.finish();
-            query.exec("INSERT INTO utilisateur VALUES ('Cunégonde@free.fr','88McGyver','Cunégonde');");
+            query.exec("INSERT INTO utilisateur VALUES ('cunegonde@free.fr','88McGyver','Cunégonde');");
             query.finish();
-            query.exec("INSERT INTO utilisateur VALUES ('Patrocle@gmail.com','Troie','Patrocle');");
+            query.exec("INSERT INTO utilisateur VALUES ('patrocle@gmail.com','Troie','Patrocle');");
             query.finish();
-            query.exec("INSERT INTO utilisateur VALUES ('Octavie@orange.fr','CésarLeJeune','Octavie');");
+            query.exec("INSERT INTO utilisateur VALUES ('octavie@orange.fr','CésarLeJeune','Octavie');");
             query.finish();
-            query.exec("INSERT INTO utilisateur VALUES ('Jeannic@sfr.fr','Dofus4life','Jeannic');");
+            query.exec("INSERT INTO utilisateur VALUES ('jeannic@sfr.fr','Dofus4life','Jeannic');");
             query.finish();
         } else {
             qDebug() << "Impossible de créer la table utilisateur";
@@ -36,17 +36,17 @@ GestionnaireBDD::GestionnaireBDD()
         }
         if (query.exec("CREATE TABLE IF NOT EXISTS compte(createur VARCHAR(50),nomc VARCHAR(50) PRIMARY KEY,type INT);")) {
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Henriette@orange.fr','Compte Henriette',1);");
+            query.exec("INSERT INTO compte VALUES ('henriette@orange.fr','Compte Henriette',1);");
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Claude@sfr.fr','Compte Claude',2);");
+            query.exec("INSERT INTO compte VALUES ('claude@sfr.fr','Compte Claude',2);");
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Cunégonde@free.fr','Compte Cunégonde',3);");
+            query.exec("INSERT INTO compte VALUES ('cunegonde@free.fr','Compte Cunégonde',3);");
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Patrocle@gmail.com','Compte Patrocle',1);");
+            query.exec("INSERT INTO compte VALUES ('patrocle@gmail.com','Compte Patrocle',1);");
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Octavie@orange.fr','Compte Octavie',3);");
+            query.exec("INSERT INTO compte VALUES ('octavie@orange.fr','Compte Octavie',3);");
             query.finish();
-            query.exec("INSERT INTO compte VALUES ('Jeannic@sfr.fr','Compte Jeannic',2);");
+            query.exec("INSERT INTO compte VALUES ('jeannic@sfr.fr','Compte Jeannic',2);");
             query.finish();
         } else {
             qDebug() << "Impossible de créer la table compte";
@@ -54,17 +54,17 @@ GestionnaireBDD::GestionnaireBDD()
         }
         if (query.exec("CREATE TABLE IF NOT EXISTS participants(utilisateur VARCHAR(50),compte VARCHAR(50), PRIMARY KEY(utilisateur, compte));")) {
             query.finish();
-            query.exec("INSERT INTO participants VALUES ('Henriette@orange.fr','Compte Henriette');");
+            query.exec("INSERT INTO participants VALUES ('henriette@orange.fr','Compte Henriette');");
             query.finish();
-            query.exec("INSERT INTO participants VALUES ('Claude@sfr.fr','Compte Claude');");
+            query.exec("INSERT INTO participants VALUES ('claude@sfr.fr','Compte Claude');");
             query.finish();
-            query.exec("INSERT INTO participants VALUES ('Cunégonde@free.fr','Compte Cunégonde');");
+            query.exec("INSERT INTO participants VALUES ('cunegonde@free.fr','Compte Cunégonde');");
             query.finish();
-            query.exec("INSERT INTO participants VALUES ('Patrocle@gmail.com','Compte Patrocle');");
+            query.exec("INSERT INTO participants VALUES ('patrocle@gmail.com','Compte Patrocle');");
             query.finish();
-            query.exec("INSERT INTO participants VALUES ('Octavie@orange.fr','Compte Octavie');");
+            query.exec("INSERT INTO participants VALUES ('octavie@orange.fr','Compte Octavie');");
             query.finish();
-            query.exec("INSERT INTO participants VALUES ('Jeannic@sfr.fr','Compte JeanNic');");
+            query.exec("INSERT INTO participants VALUES ('jeannic@sfr.fr','Compte JeanNic');");
             query.finish();
         } else {
             qDebug() << "Impossible de créer la table participants";
@@ -72,17 +72,17 @@ GestionnaireBDD::GestionnaireBDD()
         }
         if (query.exec("CREATE TABLE IF NOT EXISTS transac(id INT PRIMARY KEY, nomC VARCHAR(50), donneur VARCHAR(50), receveur VARCHAR(50), montant INT);")) {
             query.finish();
-            query.exec("INSERT INTO transaction VALUES ('1','Compte Henriette','Claude@sfr.fr','Henriette@orange.fr','10');");
+            query.exec("INSERT INTO transaction VALUES ('1','Compte Henriette','claude@sfr.fr','henriette@orange.fr','10');");
             query.finish();
-            query.exec("INSERT INTO transaction VALUES ('2','Compte Claude','Cunégonde@free.fr','Claude@sfr.fr','50');");
+            query.exec("INSERT INTO transaction VALUES ('2','Compte Claude','cunegonde@free.fr','claude@sfr.fr','50');");
             query.finish();
-            query.exec("INSERT INTO transaction VALUES ('3','Compte Cunégonde','Patrocle@gmail.com','Cunégonde@free.fr','160');");
+            query.exec("INSERT INTO transaction VALUES ('3','Compte Cunégonde','patrocle@gmail.com','cunegonde@free.fr','160');");
             query.finish();
-            query.exec("INSERT INTO transaction VALUES ('4','Compte Patrocle','Octavie@orange.fr','Patrocle@gmail.com','300');");
+            query.exec("INSERT INTO transaction VALUES ('4','Compte Patrocle','octavie@orange.fr','patrocle@gmail.com','300');");
             query.finish();
-            query.exec("INSERT INTO transaction VALUES ('5','Compte Octavie','Jeannic@sfr.fr','Octavie@orange.fr','600');");
+            query.exec("INSERT INTO transaction VALUES ('5','Compte Octavie','jeannic@sfr.fr','octavie@orange.fr','600');");
             query.finish();
-            query.exec("INSERT INTO transaction VALUES ('6','Compte JeanNic','Henriette@orange.fr','Jeannic@sfr.fr','1200');");
+            query.exec("INSERT INTO transaction VALUES ('6','Compte JeanNic','henriette@orange.fr','jeannic@sfr.fr','1200');");
             query.finish();
         } else {
             qDebug() << "Impossible de créer la table transaction";
