@@ -33,3 +33,5 @@ Version 16 : Gestion de l'ajout d'utilisateurs à un compte, ainsi que la suppre
 Version 17 : Refonte de la classe Compte et ajout de fonctions nécessaires aux versions suivantes dans GestionnaireBDD.
 
 Version 18 : Création de la classe graphique CompteCommun. (.hpp .cpp .ui)
+
+Version 19 : Gestion de l'affichage des informations du compte commun.
