@@ -27,3 +27,5 @@ Version 13 : Gestion des comptes et leur ajout avec la base de données.
 Version 14 : Correction de bugs liés à la base de données + table transaction.
 
 Version 15 : Affichage des comptes de l'utilisateur + multiples corrections.
+
+Version 16 : Gestion de l'ajout d'utilisateurs à un compte, ainsi que la suppression de compte.
