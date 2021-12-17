@@ -29,3 +29,5 @@ Version 14 : Correction de bugs liés à la base de données + table transaction
 Version 15 : Affichage des comptes de l'utilisateur + multiples corrections.
 
 Version 16 : Gestion de l'ajout d'utilisateurs à un compte, ainsi que la suppression de compte.
+
+Version 17 : Refonte de la classe Compte et ajout de fonctions nécessaires aux versions suivantes dans GestionnaireBDD.
