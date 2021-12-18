@@ -28,6 +28,17 @@ A Savoir :
 Doxygen : 
 	
 	Construire la documentation : 
+   
+        - Ouvrez un terminal dans le dossier contenant le fichier Doxyfile.
+
+        - Tapez les comandes suivantes :
+            $doxygen Doxyfile
+            $cd latex
+            $make
+
+        - La documentation est maintenant générée sous forme de pdf, 
+        pour la récupérer il suffit d'aller chercher dans le dossier 
+        latex venant d'être créé le fichier nommé refman.pdf.
 	
 	
 Fonctionnalitées de la version finale :
