@@ -87,4 +87,3 @@ void DepensesPartagees::on_enregistrer_clicked()
     gestionnaire.getGestionnaireBDD().ajouter_transaction(now, compte, donneur.toStdString(), receveur.toStdString(), montant.toInt());
     raffraichir_affichage();
 }
-

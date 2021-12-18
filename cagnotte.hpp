@@ -10,21 +10,20 @@
 #ifndef CAGNOTTE_HPP
 #define CAGNOTTE_HPP
 
-#include <QDialog>
 #include "gestionnairedialogue.hpp"
+#include <QDialog>
 
 namespace Ui {
 class Cagnotte;
 }
 
-class Cagnotte : public QDialog
-{
+class Cagnotte : public QDialog {
     Q_OBJECT
 
 public:
     /// @brief Constructeur de la classe Cagnotte.
     /// @param QWidget parent
-    explicit Cagnotte(QWidget *parent = nullptr);
+    explicit Cagnotte(QWidget* parent = nullptr);
     /// @brief Constructeur de la classe Cagnotte.
     /// @param QWidget parent
     /// @param Compte compte
@@ -42,7 +41,7 @@ private slots:
     void on_deposerDeLArgent_clicked();
 
 private:
-    Ui::Cagnotte *ui;
+    Ui::Cagnotte* ui;
     /// @brief Le gestionnaire de dialogue de l'application.
     GestionnaireDialogue gestionnaire;
     /// @brief Le compte depuis que l'on regarde.

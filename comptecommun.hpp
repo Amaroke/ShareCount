@@ -10,8 +10,8 @@
 #ifndef COMPTECOMMUN_HPP
 #define COMPTECOMMUN_HPP
 
-#include <QDialog>
 #include "gestionnairedialogue.hpp"
+#include <QDialog>
 
 namespace Ui {
 class CompteCommun;
@@ -27,14 +27,13 @@ class CompteCommun;
  ** @author H. Iopeti, univ. Lorraine
  **/
 
-class CompteCommun : public QDialog
-{
+class CompteCommun : public QDialog {
     Q_OBJECT
 
 public:
     /// @brief Constructeur de la classe CompteCommun.
     /// @param QWidget parent
-    explicit CompteCommun(QWidget *parent = nullptr);
+    explicit CompteCommun(QWidget* parent = nullptr);
     /// @brief Constructeur de la classe CompteCommun.
     /// @param QWidget parent
     /// @param Compte compte
@@ -56,7 +55,7 @@ private slots:
     void raffraichir_affichage();
 
 private:
-    Ui::CompteCommun *ui;
+    Ui::CompteCommun* ui;
     /// @brief Le gestionnaire de dialogue de l'application.
     GestionnaireDialogue gestionnaire;
     /// @brief Le compte depuis lequel on invite.

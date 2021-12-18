@@ -24,6 +24,7 @@ Compte::~Compte() { }
 // Fonction qui retourne un entier correspondant au type du compte
 //
 // le type du compte
-int Compte::getType() {
+int Compte::getType()
+{
     return type;
 }

@@ -7,9 +7,9 @@
 #include "ui_comptecommun.h"
 
 // Constructeur de la classe CompteCommun.
-CompteCommun::CompteCommun(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::CompteCommun)
+CompteCommun::CompteCommun(QWidget* parent)
+    : QDialog(parent)
+    , ui(new Ui::CompteCommun)
 {
     ui->setupUi(this);
 }
@@ -30,7 +30,7 @@ CompteCommun::CompteCommun(QWidget* parent, const std::string compte, const Gest
 
     std::string liste_membres_concat;
     std::vector<std::string> liste_membres = gestionnaire.getGestionnaireBDD().recuperer_liste_membres(compte);
-    for(int i = 0; i < (int)liste_membres.size() - 1 ; ++i){
+    for (int i = 0; i < (int)liste_membres.size() - 1; ++i) {
         liste_membres_concat.append(gestionnaire.getGestionnaireBDD().recherche_utilisateur(liste_membres[i].c_str()).get_nom_utilisateur()).append(", ");
     }
     liste_membres_concat.append(gestionnaire.getGestionnaireBDD().recherche_utilisateur(liste_membres[liste_membres.size() - 1].c_str()).get_nom_utilisateur().append("."));
@@ -77,23 +77,23 @@ void CompteCommun::on_deposerDeLArgent_clicked()
 // La procédure qui raffraichit l'affichage d'un compte commun.
 //
 // version 20 Hugo Iopeti, univ. Lorraine
-void CompteCommun::raffraichir_affichage(){
+void CompteCommun::raffraichir_affichage()
+{
     std::string liste_transactions_concat;
     std::vector<std::string> liste_transactions = gestionnaire.getGestionnaireBDD().recuperer_liste_transactions(compte);
 
     int montant_total = 0;
-    for(int i = 0 ; i < (int)liste_transactions.size(); ++i){
+    for (int i = 0; i < (int)liste_transactions.size(); ++i) {
         QStringList liste = QString(liste_transactions[i].c_str()).split(" ");
         int montant = atoi(liste[2].toStdString().c_str());
         std::string utilisateur;
         //On gère l'affichage selon si l'utilisateur dépose ou retire de l'argent.
-        if(montant > 0) {
-        utilisateur = gestionnaire.getGestionnaireBDD().recherche_utilisateur(liste[0]).get_nom_utilisateur();
-        liste_transactions_concat.append("- ").append(utilisateur).append(" a déposé ").append(std::to_string(montant)).append("€.\n");
-        }
-        else  {
-        utilisateur = gestionnaire.getGestionnaireBDD().recherche_utilisateur(liste[1]).get_nom_utilisateur();
-        liste_transactions_concat.append("- ").append(utilisateur).append(" a retiré ").append(std::to_string(-montant)).append("€.\n");
+        if (montant > 0) {
+            utilisateur = gestionnaire.getGestionnaireBDD().recherche_utilisateur(liste[0]).get_nom_utilisateur();
+            liste_transactions_concat.append("- ").append(utilisateur).append(" a déposé ").append(std::to_string(montant)).append("€.\n");
+        } else {
+            utilisateur = gestionnaire.getGestionnaireBDD().recherche_utilisateur(liste[1]).get_nom_utilisateur();
+            liste_transactions_concat.append("- ").append(utilisateur).append(" a retiré ").append(std::to_string(-montant)).append("€.\n");
         }
         montant_total += montant; //On calcul le solde d'un compte commun.
     }

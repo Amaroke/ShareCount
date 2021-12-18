@@ -196,8 +196,8 @@ void GestionnaireBDD::ajouter_compte_bdd(const std::string email, const std::str
     bdd.close();
 }
 
-
-Compte GestionnaireBDD::recherche_compte(const QString& compte) {
+Compte GestionnaireBDD::recherche_compte(const QString& compte)
+{
     QSqlDatabase bdd = QSqlDatabase::database();
     Compte res = Compte(Utilisateur("", "", ""), "", -1);
     if (bdd.open()) {
@@ -217,7 +217,6 @@ Compte GestionnaireBDD::recherche_compte(const QString& compte) {
     bdd.close();
     return res;
 }
-
 
 // Fonction qui retourne la liste des comptes lié à un utilisateur.
 //
@@ -268,29 +267,27 @@ void GestionnaireBDD::ajouter_transaction(const int id, const std::string nom_co
         QString mail_donneur = QString(donneur.c_str());
         QString mail_receveur = QString(receveur.c_str());
         QString montant_str = QString(std::to_string(montant).c_str());
-        if(mail_donneur == "NULL"){
+        if (mail_donneur == "NULL") {
             if (query.exec("INSERT INTO transac VALUES (" + id_str + ",'" + compte + "', NULL,'" + mail_receveur + "'," + montant_str + ");")) {
                 query.finish();
             } else {
                 qDebug() << "Impossible d'insérer la transaction dans la base de données";
                 query.finish();
             }
-        }
-        else if (mail_receveur == "NULL"){
+        } else if (mail_receveur == "NULL") {
             if (query.exec("INSERT INTO transac VALUES (" + id_str + ",'" + compte + "','" + mail_donneur + "', NULL," + montant_str + ");")) {
                 query.finish();
             } else {
                 qDebug() << "Impossible d'insérer la transaction dans la base de données";
                 query.finish();
             }
-        }
-        else{
-        if (query.exec("INSERT INTO transac VALUES (" + id_str + ",'" + compte + "','" + mail_donneur + "','" + mail_receveur + "'," + montant_str + ");")) {
-            query.finish();
         } else {
-            qDebug() << "Impossible d'insérer la transaction dans la base de données";
-            query.finish();
-        }
+            if (query.exec("INSERT INTO transac VALUES (" + id_str + ",'" + compte + "','" + mail_donneur + "','" + mail_receveur + "'," + montant_str + ");")) {
+                query.finish();
+            } else {
+                qDebug() << "Impossible d'insérer la transaction dans la base de données";
+                query.finish();
+            }
         }
     } else {
         qDebug() << "Ouverture de la base de données impossible";
@@ -304,7 +301,7 @@ void GestionnaireBDD::supprimer_compte(const QString nom, const QString utilisat
     QSqlDatabase bdd = QSqlDatabase::database();
     if (bdd.open()) {
         QSqlQuery query(bdd);
-        if (query.exec("DELETE FROM compte WHERE(nomc='" + nom + "') AND(createur='"+utilisateur_connecte+"'));")) {
+        if (query.exec("DELETE FROM compte WHERE(nomc='" + nom + "') AND(createur='" + utilisateur_connecte + "'));")) {
             query.finish();
         } else {
             qDebug() << "Impossible de supprimer des données dans la base de données";
@@ -417,7 +414,8 @@ std::vector<std::string> GestionnaireBDD::recuperer_liste_transactions(const std
 //
 // l'utilisateur trouvé ou un utilisateur avec des données vides si aucun utilisateur n'a été trouvé
 // version 22, L. Yvoz, univ. Lorraine
-Utilisateur GestionnaireBDD::recherche_createur(const QString& compte) {
+Utilisateur GestionnaireBDD::recherche_createur(const QString& compte)
+{
     QSqlDatabase bdd = QSqlDatabase::database();
     Utilisateur res = Utilisateur("", "", "");
     if (bdd.open()) {
