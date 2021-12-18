@@ -31,23 +31,25 @@ public:
     Accueil(QWidget* parent = nullptr);
     /// @brief Le destructeur de la classe.
     ~Accueil();
-    /// @brief Fonction qui connecte un utilisateur à l'application en fonction de l'adresse mail et du mot de passe donné en paramètre. @version 5 @author L. Yvoz, univ. Lorraine
+    /// @brief Fonction qui connecte un utilisateur à l'application en fonction de l'adresse mail et du mot de passe donné en paramètre.
     ///
     /// @param adresse_mail l'adresse mail donnée
     /// @param mot_de_passe un pointeur contenant le mot de passe donné
     /// @param mdp_correct un pointeur vers un booléen qui indique si le mot de passe est correct
     ///
     /// @return Un booléen qui indique si l'utilisateur s'est connecté.
+    /// @version 5 @author L. Yvoz, univ. Lorraine
     bool connexion_utilisateur(const std::string& adresse_mail,
         const std::string& mot_de_passe,
         bool& mdp_correct);
     /// @brief Création d'une fenêtre de d'inscription depuis la mainwindows. @version 5 @author L. Yvoz, univ. Lorraine
     void fenetre_creer_un_compte();
-    /// @brief Création d'une fenêtre de connexion depuis la mainwindows. @version 5 @author L. Yvoz, univ. Lorraine
+    /// @brief Création d'une fenêtre de connexion depuis la mainwindows.
     ///
     /// @param adresse_mail l'adresse mail donnée
     /// @param mot_de_passe un pointeur contenant le mot de passe donné
     /// @param utilisateur_existe un booléen qui contient l'information de l'existence du compte
+    /// @version 5 @author L. Yvoz, univ. Lorraine
     void fenetre_se_connecter(const std::string& adresse_mail = "", const std::string& mot_de_passe = "", const bool utilisateur_existe = false);
 
 private slots:

@@ -13,6 +13,16 @@
 #include "gestionnairedialogue.hpp"
 #include <QDialog>
 
+/**
+ ** @brief La classe Cagnotte
+ **
+ ** Elle contient les fonctions nécessaires à la réactivité
+ ** de la fenêtre graphique définie dans le fichier Cagnotte.ui.
+ **
+ ** @version 22
+ **
+ ** @author L. Yvoz, univ. de Lorraine
+ */
 namespace Ui {
 class Cagnotte;
 }
@@ -22,9 +32,11 @@ class Cagnotte : public QDialog {
 
 public:
     /// @brief Constructeur de la classe Cagnotte.
+    ///
     /// @param QWidget parent
     explicit Cagnotte(QWidget* parent = nullptr);
     /// @brief Constructeur de la classe Cagnotte.
+    ///
     /// @param QWidget parent
     /// @param Compte compte
     /// @param gd gestionnaire de dialogue

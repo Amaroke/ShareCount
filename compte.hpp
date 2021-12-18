@@ -1,7 +1,6 @@
 /** @file compte.hpp
  **
- ** @brief Le fichier qui contient la classe abstraite Compte et ses classes filles
- ** CompteDepensesPartagees, Cagnotte et CompteCommun.
+ ** @brief Le fichier qui contient la classe Compte.
  **
  ** @version 7
  **
@@ -15,7 +14,7 @@
 #include <vector>
 
 /**
- ** @brief La classe abstraite Compte
+ ** @brief La classe Compte
  **
  ** Elle contient les attributs nécessaires à un compte et
  ** définit les méthodes abstraites des comptes.
@@ -51,7 +50,6 @@ public:
     /// @brief Fonction qui retourne un entier correspondant au type du compte
     ///
     /// @return le type du compte
-    ///
     /// @version 17 @author L. Yvoz, univ. lorraine
     int getType();
 };

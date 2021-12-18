@@ -24,6 +24,7 @@ Accueil::~Accueil() { delete ui; }
 // mdp_correct un pointeur vers un booléen qui indique si le mot de passe est correct
 //
 // Retourne un booléen qui indique si l'utilisateur s'est connecté.
+// version 5, L. Yvoz, univ. Lorraine
 bool Accueil::connexion_utilisateur(const std::string& adresse_mail,
     const std::string& mot_de_passe,
     bool& mdp_correct)
@@ -42,7 +43,7 @@ bool Accueil::connexion_utilisateur(const std::string& adresse_mail,
     return utilisateur_existe;
 }
 
-// Création d'une fenêtre de d'inscription depuis la mainwindows.
+// Création d'une fenêtre de d'inscription depuis la mainwindows. Version 5, L. Yvoz, univ. Lorraine
 void Accueil::fenetre_creer_un_compte()
 {
     Inscription* inscription = new Inscription(this); // On instancie la classe Inscription.
@@ -73,6 +74,7 @@ void Accueil::fenetre_creer_un_compte()
 // adresse_mail l'adresse mail donnée
 // mot_de_passe un pointeur contenant le mot de passe donné
 // utilisateur_existe un booléen qui contient l'information de l'existence du compte
+// version 5, L. Yvoz, univ. Lorraine
 void Accueil::fenetre_se_connecter(const std::string& adresse_mail, const std::string& mot_de_passe, const bool utilisateur_existe)
 {
     Connexion* connexion;
@@ -112,7 +114,7 @@ void Accueil::on_creer_compte_clicked() { fenetre_creer_un_compte(); }
 // La fonction associée à un clic de bouton sur se connecter.
 void Accueil::on_se_connecter_clicked() { fenetre_se_connecter(); }
 
-// La fonction associée à un clic de bouton sur quitter l'application. @version 6 @author H. Mathieu Steinbach, univ. Lorraine
+// La fonction associée à un clic de bouton sur quitter l'application. Version 6, H. Mathieu Steinbach, univ. Lorraine
 void Accueil::on_quitter_appli_clicked()
 {
     this->close();

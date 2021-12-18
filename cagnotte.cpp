@@ -1,11 +1,14 @@
 /* cagnotte.cpp
- * version 18
+ * version 22
  * L. Yvoz, univ. Lorraine
  */
 
 #include "cagnotte.hpp"
 #include "ui_cagnotte.h"
 
+// Constructeur de la classe Cagnotte.
+//
+// QWidget parent
 Cagnotte::Cagnotte(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Cagnotte)
