@@ -35,3 +35,5 @@ Version 17 : Refonte de la classe Compte et ajout de fonctions nécessaires aux 
 Version 18 : Création de la classe graphique CompteCommun. (.hpp .cpp .ui)
 
 Version 19 : Gestion de l'affichage des informations du compte commun.
+
+Version 20 : Gestion des dépôts et retraits d'argent sur un compte commun.
