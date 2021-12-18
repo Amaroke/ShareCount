@@ -15,8 +15,8 @@
 #include <QFileDialog>
 #include <QTableView>
 #include <QtSql>
-#include <iostream>
 #include <cstring>
+#include <iostream>
 
 /** @brief La classe GestionnaireBDD.
  **

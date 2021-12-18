@@ -9,9 +9,9 @@
 // Constructeur de la classe Cagnotte.
 //
 // QWidget parent
-Cagnotte::Cagnotte(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Cagnotte)
+Cagnotte::Cagnotte(QWidget* parent)
+    : QDialog(parent)
+    , ui(new Ui::Cagnotte)
 {
     ui->setupUi(this);
 }
@@ -77,12 +77,13 @@ void Cagnotte::on_deposerDeLArgent_clicked()
 // La procédure qui raffraichit l'affichage de la cagnotte.
 //
 // le montant total d'argent dans la cagnotte
-int Cagnotte::raffraichir_affichage(){
+int Cagnotte::raffraichir_affichage()
+{
     std::string liste_transactions_concat;
     std::vector<std::string> liste_transactions = gestionnaire.getGestionnaireBDD().recuperer_liste_transactions(compte);
 
     int montant_total = 0;
-    for(int i = 0 ; i < (int)liste_transactions.size(); ++i){
+    for (int i = 0; i < (int)liste_transactions.size(); ++i) {
         QStringList liste = QString(liste_transactions[i].c_str()).split(" ");
         int montant = atoi(liste[2].toStdString().c_str());
         std::string utilisateur;
@@ -90,7 +91,7 @@ int Cagnotte::raffraichir_affichage(){
         if (montant > 0) {
             utilisateur = gestionnaire.getGestionnaireBDD().recherche_utilisateur(liste[0]).get_nom_utilisateur();
             liste_transactions_concat.append("- ").append(utilisateur).append(" a donné ").append(std::to_string(montant)).append("€.\n");
-        } else  {
+        } else {
             utilisateur = gestionnaire.getGestionnaireBDD().recherche_utilisateur(liste[1]).get_nom_utilisateur();
             liste_transactions_concat.append("- ").append(utilisateur).append(" a retiré ").append(std::to_string(-montant)).append("€.\n");
         }

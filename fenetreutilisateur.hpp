@@ -10,14 +10,14 @@
 #ifndef FENETREUTILISATEUR_HPP
 #define FENETREUTILISATEUR_HPP
 
-#include "creercompte.hpp"
-#include "gestionnairedialogue.hpp"
-#include <QMainWindow>
 #include "accueil.hpp"
-#include "invitation.hpp"
-#include "comptecommun.hpp"
-#include "depensespartagees.hpp"
 #include "cagnotte.hpp"
+#include "comptecommun.hpp"
+#include "creercompte.hpp"
+#include "depensespartagees.hpp"
+#include "gestionnairedialogue.hpp"
+#include "invitation.hpp"
+#include <QMainWindow>
 
 namespace Ui {
 class FenetreUtilisateur;
