@@ -27,18 +27,24 @@ A Savoir :
 
 Doxygen : 
 	
+    Documentation déjà présente :
+    
+        Le fichier Doxyfile contient la configuration de notre documentation.
+
+        Le fichier Documentation.pdf contient la documentation déjà générée de la dernière version de notre application (version 23).
+
 	Construire la documentation : 
    
-        - Ouvrez un terminal dans le dossier contenant le fichier Doxyfile.
+        - Copiez le fichier Doxyfile dans le dossier contenant la version du code que vous voulez documenter.
+
+        - Ouvrez un terminal dans ce dossier.
 
         - Tapez les comandes suivantes :
             $doxygen Doxyfile
             $cd latex
             $make
 
-        - La documentation est maintenant générée sous forme de pdf, 
-        pour la récupérer il suffit d'aller chercher dans le dossier 
-        latex venant d'être créé le fichier nommé refman.pdf.
+        - La documentation est maintenant générée sous forme de pdf, pour la récupérer il suffit d'aller chercher dans le dossier latex venant d'être créé le fichier nommé refman.pdf.
 	
 	
 Fonctionnalitées de la version finale :

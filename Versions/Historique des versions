@@ -41,3 +41,5 @@ Version 20 : Gestion des dépôts et retraits d'argent sur un compte commun.
 Version 21 : Création de la classe graphique DepensesPartagees (.hpp, .cpp, .ui). Gestion des transactions sur cette classe.
 
 Version 22 : Création de la classe graphique Cagnotte (.hpp, .cpp, .ui). Gestion des transactions sur cette classe.
+
+Version 23 : Finalisation de l'application ShareCount.
