@@ -13,10 +13,11 @@ DepensesPartagees::DepensesPartagees(QWidget* parent)
     ui->setupUi(this);
 }
 
-// Constructeur de la classe CompteCommun.
+// Constructeur de la classe DepensesPartagees.
 //
 // QWidget parent
 // Compte le compte
+// GestionnaireDialogue gd
 DepensesPartagees::DepensesPartagees(QWidget* parent, const std::string compte, const GestionnaireDialogue& gd)
     : QDialog(parent)
     , ui(new Ui::DepensesPartagees)
@@ -39,6 +40,7 @@ DepensesPartagees::DepensesPartagees(QWidget* parent, const std::string compte, 
     raffraichir_affichage();
 }
 
+//Destructeur de la classe DepensesPartagees.
 DepensesPartagees::~DepensesPartagees()
 {
     delete ui;

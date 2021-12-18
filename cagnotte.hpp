@@ -13,6 +13,10 @@
 #include "gestionnairedialogue.hpp"
 #include <QDialog>
 
+namespace Ui {
+class Cagnotte;
+}
+
 /**
  ** @brief La classe Cagnotte
  **
@@ -23,9 +27,6 @@
  **
  ** @author L. Yvoz, univ. de Lorraine
  */
-namespace Ui {
-class Cagnotte;
-}
 
 class Cagnotte : public QDialog {
     Q_OBJECT

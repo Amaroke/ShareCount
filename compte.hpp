@@ -23,6 +23,7 @@
  **
  ** @author L. Yvoz, univ. de Lorraine
  */
+
 class Compte {
 private:
     /// @brief L'utilisateur qui a créé le compte.

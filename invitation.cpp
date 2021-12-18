@@ -32,13 +32,13 @@ Invitation::~Invitation()
     delete ui;
 }
 
-// La fonction associée à un clic de bouton retour.
+// La procédure associée à un clic de bouton retour.
 void Invitation::on_Retour_clicked()
 {
     this->reject(); // On ferme la fenêtre de dialogue.
 }
 
-// La fonction associée à un clic de bouton valider.
+// La procédure associée à un clic de bouton valider.
 void Invitation::on_valider_clicked()
 {
     // On récupère l'email saisi.

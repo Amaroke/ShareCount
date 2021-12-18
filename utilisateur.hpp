@@ -16,14 +16,13 @@
  *utilisateur.
  **
  ** Elle contient 4 attributs, 1 méthode de construction, 1 méthode de
- *destruction
- ** et 8 méthodes d'obtention et de modification des attributs cités
- *précédemment.
+ *destruction et 6 méthodes d'obtention et de modification des attributs cités précédemment.
  **
  ** @version 3
  **
  ** @author L. Yvoz, univ. de Lorraine
  **/
+
 class Utilisateur {
 private:
     /// @brief Le nom d'utilisateur.

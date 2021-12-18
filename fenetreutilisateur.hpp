@@ -32,6 +32,7 @@ class FenetreUtilisateur;
  **
  ** @author H. Mathieu Steinbach, univ. Lorraine
  **/
+
 class FenetreUtilisateur : public QMainWindow {
     Q_OBJECT
 

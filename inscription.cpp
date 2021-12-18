@@ -61,7 +61,7 @@ void Inscription::on_validation_rejected()
     this->reject(); // On ferme la fenêtre de dialogue.
 }
 
-// Fonction permettant de récupérer les informations rentrée par l'utilisateur.
+// Procédure permettant de récupérer les informations rentrée par l'utilisateur.
 //
 // adresse_mail un pointeur contenant l'adresse vers le string de l'adresse mail donnée
 // nom_utilisateur un pointeur contenant l'adresse vers le string du nom d'utilisateur donné

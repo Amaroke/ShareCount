@@ -22,8 +22,8 @@ class Connexion;
 
 /** @brief La classe Connexion gère l'UI de la connexion de l'utilisateur
  **
- ** Elle contient 1 méthode de construction, 1 méthode de destruction
- ** et 4 fonctions.
+ ** Elle contient 2 méthodes de construction, 1 méthode de destruction
+ ** et 5 fonctions.
  **
  ** @version 4
  **

@@ -15,6 +15,7 @@
 namespace Ui {
 class CreerCompte;
 }
+
 /** @brief La classe Invitation gère l'UI de la creation d'un compte
  **
  ** Elle contient 1 méthode de construction, 1 méthode de destruction
@@ -24,6 +25,7 @@ class CreerCompte;
  **
  ** @author H. Mathieu Steinbach, univ. Lorraine
  **/
+
 class CreerCompte : public QDialog {
     Q_OBJECT
 

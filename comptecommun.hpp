@@ -20,7 +20,7 @@ class CompteCommun;
 /** @brief La classe CompteCommun gère l'UI du compte commun d'un utilisateur
  **
  ** Elle contient 2 méthodes de construction, 1 méthode de destruction
- ** et 3 fonctions.
+ ** et 4 fonctions.
  **
  ** @version 18
  **
@@ -42,15 +42,15 @@ public:
     ~CompteCommun();
 
 private slots:
-    /// @brief La fonction associée à un clic de bouton retour.
+    /// @brief La procédure associée à un clic de bouton retour.
     void on_retour_clicked();
-    /// @brief La fonction associée à un clic de bouton retirer de l'argent.
+    /// @brief La procédure associée à un clic de bouton retirer de l'argent.
     /// @version 20 @author H. Iopeti
     void on_retirerDeLArgent_clicked();
-    /// @brief La fonction associée à un clic de bouton déposer de l'argent.
+    /// @brief La procédure associée à un clic de bouton déposer de l'argent.
     /// @version 20 @author H. Iopeti
     void on_deposerDeLArgent_clicked();
-    /// @brief La fonction associée à un raffraichissement de la fenêtre du compte commun.
+    /// @brief La procédure associée à un raffraichissement de la fenêtre du compte commun.
     /// @version 20 @author H. Iopeti
     void raffraichir_affichage();
 

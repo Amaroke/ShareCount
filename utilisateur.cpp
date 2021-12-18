@@ -1,7 +1,5 @@
 /* utilisateur.cpp
- *
  * Le fichier contenant la classe Utilisateur.
- *
  * L. Yvoz, univ. de Lorraine
  */
 

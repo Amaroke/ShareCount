@@ -6,6 +6,7 @@
 #include "fenetreutilisateur.hpp"
 #include "ui_fenetreutilisateur.h"
 
+//Constructeur de la classe FenetreUtilisateur.
 FenetreUtilisateur::FenetreUtilisateur(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::FenetreUtilisateur)
@@ -13,7 +14,10 @@ FenetreUtilisateur::FenetreUtilisateur(QWidget* parent)
     ui->setupUi(this);
     afficher_comptes();
 }
-
+// Constructeur de la classe FenetreUtilisateur.
+//
+// QWidget parent
+// GestionnaireDialogue gd
 FenetreUtilisateur::FenetreUtilisateur(QWidget* parent, const GestionnaireDialogue& gd)
     : QMainWindow(parent)
     , ui(new Ui::FenetreUtilisateur)
@@ -22,7 +26,7 @@ FenetreUtilisateur::FenetreUtilisateur(QWidget* parent, const GestionnaireDialog
     ui->setupUi(this);
     afficher_comptes();
 }
-
+//Destructeur de la classe FenetreUtilisateur.
 FenetreUtilisateur::~FenetreUtilisateur()
 {
     delete ui;

@@ -18,10 +18,21 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
+
 namespace Ui {
 class MainWindow;
 }
 QT_END_NAMESPACE
+
+/**
+ ** @brief La classe Accueil
+ **
+ ** Elle contient 1 constructeur, 1 destructeur et 6 fonctions.
+ **
+ ** @version 9
+ **
+ ** @author H. Mathieu Steinbach, univ. Lorraine
+ */
 
 class Accueil : public QMainWindow {
     Q_OBJECT
@@ -53,11 +64,11 @@ public:
     void fenetre_se_connecter(const std::string& adresse_mail = "", const std::string& mot_de_passe = "", const bool utilisateur_existe = false);
 
 private slots:
-    /// @brief La fonction associée à un clic de bouton de création de compte.
+    /// @brief La procédure associée à un clic de bouton de création de compte.
     void on_creer_compte_clicked();
-    /// @brief La fonction associée à un clic de bouton sur se connecter.
+    /// @brief La procédure associée à un clic de bouton sur se connecter.
     void on_se_connecter_clicked();
-    /// @brief La fonction associée à un clic de bouton sur quitter l'application. @version 6 @author H. Mathieu Steinbach, univ. Lorraine
+    /// @brief La procédure associée à un clic de bouton sur quitter l'application. @version 6 @author H. Mathieu Steinbach, univ. Lorraine
     void on_quitter_appli_clicked();
 
 private:

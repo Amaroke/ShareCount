@@ -39,15 +39,16 @@ void Connexion::on_annuler_clicked()
     this->reject(); // On ferme la fenêtre de dialogue.
 }
 
-// La fonction associée à un clic de bouton creer un compte.
+// La procédure associée à un clic de bouton creer un compte.
 void Connexion::on_creer_un_compte_clicked()
 {
     this->reject(); // On ferme la fenêtre de dialogue.
 }
 
-// La fonction associée à un clic de bouton mot de passe oublié.
+// La procédure associée à un clic de bouton mot de passe oublié.
 void Connexion::on_mdp_oublie_clicked() { }
 
+// La procédure associée à un clic de bouton valider.
 void Connexion::on_valider_clicked()
 {
     // On récupère l'email saisi.
@@ -74,7 +75,7 @@ void Connexion::on_valider_clicked()
     fflush(stdout);
 }
 
-// Fonction permettant de récupérer les informations rentrée par l'utilisateur.
+// Procédure permettant de récupérer les informations rentrée par l'utilisateur.
 //
 // adresse_mail un pointeur contenant l'adresse vers le string de l'adresse mail donnée
 // mot_de_passe un pointeur contenant l'adresse vers le string du mot de passe donné

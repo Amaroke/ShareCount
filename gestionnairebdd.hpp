@@ -18,6 +18,15 @@
 #include <iostream>
 #include <cstring>
 
+/** @brief La classe GestionnaireBDD.
+ **
+ ** Elle contient 1 méthode de construction et 12 fonctions.
+ **
+ ** @version 11
+ **
+ ** @author H. Iopeti, univ. Lorraine
+ **/
+
 class GestionnaireBDD {
 private:
 public:
@@ -35,7 +44,7 @@ public:
     ///
     /// @return l'utilisateur trouvé ou un utilisateur avec des données vides si aucun utilisateur n'a été trouvé
     Utilisateur recherche_utilisateur(const QString& mail);
-    /// @brief Fonction qui ajoute un compte à la base de données
+    /// @brief Procédure qui ajoute un compte à la base de données
     ///
     /// @param compte le compte à ajouter
     ///

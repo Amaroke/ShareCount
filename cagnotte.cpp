@@ -33,7 +33,7 @@ Cagnotte::Cagnotte(QWidget* parent, const std::string compte, const Gestionnaire
 
     Utilisateur createur = gestionnaire.getGestionnaireBDD().recherche_createur(compte.c_str());
 
-    //On enleve le bouton permettant de retirer de l'argnet de l'affichage si l'utilisateur actuel n'est pas le créateur du compte.
+    //On enlève le bouton permettant de retirer de l'argnet de l'affichage si l'utilisateur actuel n'est pas le créateur du compte.
     if (std::strcmp(createur.get_adresse_mail().c_str(), gestionnaire.get_utilisateur_connecte().get_adresse_mail().c_str()) != 0) {
         ui->retirerDeLArgent->hide();
     }

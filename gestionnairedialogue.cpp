@@ -22,7 +22,7 @@ Utilisateur GestionnaireDialogue::get_utilisateur_connecte()
     return utilisateur_connecte;
 }
 
-//Fonction qui définit un utilisateur connecté.
+//Procédure qui définit un utilisateur connecté.
 void GestionnaireDialogue::set_utilisateur_connecte(const Utilisateur& utilisateur)
 {
     utilisateur_connecte = utilisateur;
@@ -41,14 +41,14 @@ Utilisateur GestionnaireDialogue::recherche_utilisateur(const std::string& adres
     return gestionnaire_bdd.recherche_utilisateur(mail);
 }
 
-// Fonction qui ajoute un utilisateur à la liste des utilisateurs de l'application.
+// Procédure qui ajoute un utilisateur à la liste des utilisateurs de l'application.
 void GestionnaireDialogue::ajouter_utilisateur(const Utilisateur& utilisateur)
 {
     if (!gestionnaire_bdd.ajouterUtilisateur(utilisateur))
         qDebug() << "Ajout de l'utilisateur impossible";
 }
 
-// Fonction qui crée le bon compte à partir des paramètes
+// Procédure qui crée le bon compte à partir des paramètes
 // et l'ajoute à la liste des comptes enregistrés. @version 7 @author L. Yvoz, univ. Lorraine
 //
 // nom le nom du compte à créer

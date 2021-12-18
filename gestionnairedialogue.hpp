@@ -24,6 +24,7 @@
  **
  ** @author H. Iopeti, univ. Lorraine
  **/
+
 class GestionnaireDialogue {
 private:
     /// @brief L'utilisateur qui est connecté.

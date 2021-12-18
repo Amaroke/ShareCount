@@ -196,6 +196,7 @@ void GestionnaireBDD::ajouter_compte_bdd(const std::string email, const std::str
     bdd.close();
 }
 
+// Fonction qui recherche un compte dans la base de données.
 Compte GestionnaireBDD::recherche_compte(const QString& compte)
 {
     QSqlDatabase bdd = QSqlDatabase::database();
